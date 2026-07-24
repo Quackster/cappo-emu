@@ -4,6 +4,8 @@ There is no such content on the internet anymore, only here
 
 RELEASE63-201307031203-797872414
 
+**Old op codes release** - RELEASE63-201304291103-855522680
+
 This was the magnificent emulator that reached tens of thousands of players across many retro crazzy servers (habblet.host.crazzy.org, hapixel, habbolella, habbinfo, habbinc). It also appeared on bobbaitalia for a time in 2013, managed by FahD, one of its creators along with capostrike93.
 
 During the CrazzY era, this emulator was also present on habb.biz (habb.bz, habb.biz, habb.com.br, habb.im), considered the biggest retro server of all time (managed by Magrao/JohnnySDA, EnricoDiesel, and also FahD), the only one to surpass 10,000 simultaneous online players.
