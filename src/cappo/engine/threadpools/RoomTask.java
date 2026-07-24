@@ -302,7 +302,6 @@
 /*  302: 294 */             float y = old ? result.data.getFloat("y") : result.data.getFloat("b");
 /*  303: 295 */             int n = old ? result.data.getInt("n") : result.data.getInt("r");
 /*  304:     */             PlayerData itemOwner;
-/*  305:     */             PlayerData itemOwner;
 /*  306: 299 */             if ((this.roomData.roomOwner != null) && (this.roomData.roomOwner.userId == itemOwnerId))
 /*  307:     */             {
 /*  308: 300 */               itemOwner = this.roomData.roomOwner;
@@ -401,15 +400,16 @@
 /*  401: 400 */         GameMapBase exModel = this.model;
 /*  402:     */         
 /*  403: 402 */         this.model = new DynamicGameMap(this.model, maxX + 1, maxY + 1);
-/*  404: 403 */         for (itemOwnerId = tmpFloorItems.values().iterator(); itemOwnerId.hasNext(); extraParam.hasNext())
+/*  404: 403 */         for (List<RoomFloorItemData.AffectedTile> tiles : tmpFloorItems.values())
 /*  405:     */         {
-/*  406: 403 */           List<RoomFloorItemData.AffectedTile> tiles = (List)itemOwnerId.next();
-/*  407: 404 */           extraParam = tiles.iterator(); continue;RoomFloorItemData.AffectedTile tile = (RoomFloorItemData.AffectedTile)extraParam.next();
-/*  408: 405 */           if ((tile.x >= exModel.widthX) || (tile.y >= exModel.heightY))
-/*  409:     */           {
-/*  410: 406 */             int pos = tile.x + tile.y * this.model.widthX;
-/*  411: 407 */             this.model.setSquare(pos, new Square(tile.x, tile.y, pos, 0.0F));
-/*  412:     */           }
+/*  407: 404 */           for (RoomFloorItemData.AffectedTile tile : tiles)
+/*  408:     */           {
+/*  408b:    */             if ((tile.x >= exModel.widthX) || (tile.y >= exModel.heightY))
+/*  409:     */             {
+/*  410: 406 */               int pos = tile.x + tile.y * this.model.widthX;
+/*  411: 407 */               this.model.setSquare(pos, new Square(tile.x, tile.y, pos, 0.0F));
+/*  412:     */             }
+/*  412b:    */           }
 /*  413:     */         }
 /*  414: 411 */         this.model.buildSquares();
 /*  415:     */       }
@@ -456,7 +456,6 @@
 /*  456:     */           {
 /*  457: 451 */             int tl1 = resultInternal.data.getInt("tele_one_id");
 /*  458:     */             int otherId;
-/*  459:     */             int otherId;
 /*  460: 452 */             if (tl1 != roomItem.itemId)
 /*  461:     */             {
 /*  462: 453 */               Teleports.setParents(tl1, roomItem.itemId);
@@ -693,8 +692,8 @@
 /*  693:     */     int X;
 /*  694: 671 */     if (!validTile(xy))
 /*  695:     */     {
-/*  696: 672 */       int X = this.model.doorX;
-/*  697: 673 */       int Y = this.model.doorY;
+/*  696: 672 */       X = this.model.doorX;
+/*  697: 673 */       Y = this.model.doorY;
 /*  698: 674 */       Z = this.model.doorZ;
 /*  699:     */     }
 /*  700:     */     else
@@ -732,8 +731,8 @@
 /*  732:     */     int X;
 /*  733: 710 */     if (!validTile(xy))
 /*  734:     */     {
-/*  735: 711 */       int X = this.model.doorX;
-/*  736: 712 */       int Y = this.model.doorY;
+/*  735: 711 */       X = this.model.doorX;
+/*  736: 712 */       Y = this.model.doorY;
 /*  737: 713 */       Z = this.model.doorZ;
 /*  738:     */     }
 /*  739:     */     else
@@ -1935,8 +1934,8 @@
 /* 1935:     */   }
 /* 1936:     */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.threadpools.RoomTask
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.engine.threadpools.RoomTask
+ * JD-Core Version:    0.7.0.1
  */

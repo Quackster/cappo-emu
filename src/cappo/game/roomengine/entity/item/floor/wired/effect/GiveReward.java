@@ -68,7 +68,7 @@
 /*  68: 71 */             int prob = Integer.parseInt(parts[2]);
 /*  69: 72 */             if ((prob >= 0) && (prob <= 100))
 /*  70:    */             {
-/*  71: 76 */               Reward reward = new Reward(null);
+/*  71: 76 */               Reward reward = new Reward();
 /*  72: 77 */               reward.isBadge = (!parts[0].equals("1"));
 /*  73: 79 */               if (!reward.isBadge)
 /*  74:    */               {
@@ -208,8 +208,8 @@
 /* 208:    */   }
 /* 209:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.entity.item.floor.wired.effect.GiveReward
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.game.roomengine.entity.item.floor.wired.effect.GiveReward
+ * JD-Core Version:    0.7.0.1
  */

@@ -1,4 +1,5 @@
 /*   1:    */ package cappo.game.roomengine.wired;
+import cappo.game.collections.BaseItem;
 /*   2:    */ 
 /*   3:    */ import cappo.engine.player.Connection;
 /*   4:    */ import cappo.game.collections.BaseItem.ItemType;
@@ -142,8 +143,12 @@
 /* 142:    */   }
 /* 143:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.wired.WiredManager
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.game.roomengine.wired.WiredManager
+
+ * JD-Core Version:    0.7.0.1
+
  */

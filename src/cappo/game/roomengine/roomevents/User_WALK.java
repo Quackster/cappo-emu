@@ -1,4 +1,5 @@
 /*   1:    */ package cappo.game.roomengine.roomevents;
+import cappo.game.roomengine.itemInteractor.Interactor;
 /*   2:    */ 
 /*   3:    */ import cappo.engine.player.Connection;
 /*   4:    */ import cappo.engine.threadpools.ItemTask;
@@ -457,8 +458,12 @@
 /* 457:    */   }
 /* 458:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.roomevents.User_WALK
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.game.roomengine.roomevents.User_WALK
+
+ * JD-Core Version:    0.7.0.1
+
  */

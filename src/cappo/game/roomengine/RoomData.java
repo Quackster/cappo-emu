@@ -1,4 +1,5 @@
 /*   1:    */ package cappo.game.roomengine;
+import cappo.game.roomengine.roomlisting.RoomListing;
 /*   2:    */ 
 /*   3:    */ import cappo.engine.database.Database;
 /*   4:    */ import cappo.engine.logging.Log;
@@ -129,8 +130,12 @@
 /* 129:    */   }
 /* 130:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.RoomData
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.game.roomengine.RoomData
+
+ * JD-Core Version:    0.7.0.1
+
  */

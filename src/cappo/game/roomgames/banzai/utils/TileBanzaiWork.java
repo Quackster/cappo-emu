@@ -1,4 +1,5 @@
 /*   1:    */ package cappo.game.roomgames.banzai.utils;
+import cappo.game.roomengine.itemInteractor.Interactor;
 /*   2:    */ 
 /*   3:    */ import cappo.engine.threadpools.RoomTask;
 /*   4:    */ import cappo.game.collections.BaseItem;
@@ -103,39 +104,23 @@
 /* 103: 85 */       return new ArrayList();
 /* 104:    */     }
 /* 105: 88 */     for (int i = 0; i < 4; i++) {
-/* 106: 89 */       if (moves[i] != 0)
+/* 106: 89 */       if (moves[i])
 /* 107:    */       {
-/* 108:    */         int y;
-/* 109:    */         int x;
-/* 110:    */         int y;
-/* 111: 94 */         if (i == 0)
-/* 112:    */         {
-/* 113: 95 */           int x = X + 1;
+/* 108:    */         int x;
+/* 109:    */         int y;
+/* 111: 94 */         if (i == 0) {
+/* 113: 95 */           x = X + 1;
 /* 114: 96 */           y = Y;
-/* 115:    */         }
-/* 116:    */         else
-/* 117:    */         {
-/* 118:    */           int y;
-/* 119: 97 */           if (i == 1)
-/* 120:    */           {
-/* 121: 98 */             int x = X;
-/* 122: 99 */             y = Y + 1;
-/* 123:    */           }
-/* 124:    */           else
-/* 125:    */           {
-/* 126:    */             int y;
-/* 127:100 */             if (i == 2)
-/* 128:    */             {
-/* 129:101 */               int x = X - 1;
-/* 130:102 */               y = Y;
-/* 131:    */             }
-/* 132:    */             else
-/* 133:    */             {
-/* 134:104 */               x = X;
-/* 135:105 */               y = Y - 1;
-/* 136:    */             }
-/* 137:    */           }
-/* 138:    */         }
+/* 115:    */         } else if (i == 1) {
+/* 121: 98 */           x = X;
+/* 122: 99 */           y = Y + 1;
+/* 123:    */         } else if (i == 2) {
+/* 129:101 */           x = X - 1;
+/* 130:102 */           y = Y;
+/* 131:    */         } else {
+/* 134:104 */           x = X;
+/* 135:105 */           y = Y - 1;
+/* 136:    */         }
 /* 139:108 */         RoomTask room = tile.getRoom();
 /* 140:    */         
 /* 141:110 */         int nextXY = x + y * room.model.widthX;
@@ -268,8 +253,12 @@
 /* 268:    */   }
 /* 269:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomgames.banzai.utils.TileBanzaiWork
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.game.roomgames.banzai.utils.TileBanzaiWork
+
+ * JD-Core Version:    0.7.0.1
+
  */

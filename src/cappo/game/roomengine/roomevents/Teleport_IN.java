@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.game.roomengine.roomevents;
+import cappo.game.roomengine.itemInteractor.InteractorTeleport;
 /*  2:   */ 
 /*  3:   */ import cappo.engine.player.Connection;
 /*  4:   */ import cappo.engine.threadpools.RoomTask;
@@ -45,8 +46,12 @@
 /* 45:   */   }
 /* 46:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.roomevents.Teleport_IN
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.game.roomengine.roomevents.Teleport_IN
+
+ * JD-Core Version:    0.7.0.1
+
  */

@@ -1,4 +1,5 @@
 /*   1:    */ package cappo.engine.player;
+import cappo.game.roomengine.itemInteractor.InteractorTeleport;
 /*   2:    */ 
 /*   3:    */ import cappo.engine.Server;
 /*   4:    */ import cappo.engine.database.Database;
@@ -641,8 +642,12 @@
 /* 641:    */   }
 /* 642:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.player.Connection
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.engine.player.Connection
+
+ * JD-Core Version:    0.7.0.1
+
  */

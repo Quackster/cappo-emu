@@ -1,6 +1,12 @@
-// INTERNAL ERROR //
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.games.snowwar.tasks.SnowStageStarting
- * JD-Core Version:    0.7.0.1
- */
+package cappo.game.games.snowwar.tasks;
+
+import cappo.game.games.snowwar.SnowWarRoom;
+import cappo.protocol.messages.composers.games.snowwar.StageStartingComposer;
+
+public class SnowStageStarting
+{
+  public static void exec(SnowWarRoom room)
+  {
+    room.broadcast(StageStartingComposer.compose(room));
+  }
+}

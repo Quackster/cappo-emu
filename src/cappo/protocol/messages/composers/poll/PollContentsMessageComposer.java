@@ -20,35 +20,30 @@
 /* 20:21 */     Composer.add(poll.title, ClientMessage);
 /* 21:22 */     Composer.add(poll.thanks, ClientMessage);
 /* 22:23 */     Composer.writeInt32(poll.questions.size(), ClientMessage);
-/* 23:   */     int j;
-/* 24:   */     int i;
-/* 25:   */     label196:
-/* 26:24 */     for (Iterator localIterator = poll.questions.values().iterator(); localIterator.hasNext(); i < j)
-/* 27:   */     {
-/* 28:24 */       PollQuestion question = (PollQuestion)localIterator.next();
-/* 29:   */       
+/* 23:   */     for (PollQuestion question : poll.questions.values())
+/* 24:   */     {
 /* 30:26 */       Composer.writeInt32(question.id, ClientMessage);
 /* 31:27 */       Composer.writeInt32(question.orderid, ClientMessage);
 /* 32:28 */       Composer.writeInt32(question.type, ClientMessage);
 /* 33:29 */       Composer.add(question.text, ClientMessage);
 /* 34:30 */       if ((question.type != 1) && (question.type != 2)) {
-/* 35:   */         break label196;
+/* 35:   */         break;
 /* 36:   */       }
 /* 37:31 */       Composer.writeInt32(0, ClientMessage);
 /* 38:32 */       Composer.writeInt32(question.answers.length, ClientMessage);
 /* 39:33 */       int count = 0;
-/* 40:   */       String[] arrayOfString;
-/* 41:34 */       j = (arrayOfString = question.answers).length;i = 0; continue;String answer = arrayOfString[i];
-/* 42:35 */       Composer.add(Integer.toString(count++), ClientMessage);
-/* 43:36 */       Composer.add(answer, ClientMessage);i++;
-/* 44:   */     }
+/* 41:34 */       for (String answer : question.answers) {
+/* 42:35 */         Composer.add(Integer.toString(count++), ClientMessage);
+/* 43:36 */         Composer.add(answer, ClientMessage);
+/* 44:   */       }
+/* 44b:  */     }
 /* 45:41 */     Composer.endPacket(ClientMessage);
 /* 46:42 */     return ClientMessage;
 /* 47:   */   }
 /* 48:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.poll.PollContentsMessageComposer
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.composers.poll.PollContentsMessageComposer
+ * JD-Core Version:    0.7.0.1
  */

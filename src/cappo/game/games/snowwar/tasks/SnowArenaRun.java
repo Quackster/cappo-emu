@@ -24,28 +24,27 @@
 /* 24:27 */       room.STATUS = 0; return;
 /* 25:   */     }
 /* 26:   */     Channel socket;
+/* 26:   */     List<Channel> filter;
+/* 26:   */     MessageWriter status;
 /* 27:35 */     synchronized (room.gameEvents)
 /* 28:   */     {
 /* 29:36 */       synchronized (room.fullGameStatusQueue)
 /* 30:   */       {
-/* 31:37 */         List<Channel> filter = room.fullGameStatusQueue;
+/* 31:37 */         filter = room.fullGameStatusQueue;
 /* 32:38 */         room.fullGameStatusQueue = new ArrayList();
 /* 33:   */       }
-/* 34:   */       List<Channel> filter;
-/* 35:43 */       room.checksum = 0;
+/* 35:44 */       room.checksum = 0;
 /* 36:44 */       for (GameItemObject Object : room.gameObjects.values()) {
 /* 37:45 */         Object.GenerateCHECKSUM(room, 1);
 /* 38:   */       }
-/* 39:49 */       for (??? = filter.iterator(); ???.hasNext();)
+/* 39:49 */       for (Iterator<Channel> localIterator = filter.iterator(); localIterator.hasNext();)
 /* 40:   */       {
-/* 41:49 */         socket = (Channel)???.next();
+/* 41:49 */         socket = (Channel)localIterator.next();
 /* 42:50 */         QueueWriter.writeAndFlush(socket, FullGameStatusComposer.compose(room));
 /* 43:   */       }
-/* 44:53 */       MessageWriter status = GameStatusComposer.compose(room);
+/* 44:53 */       status = GameStatusComposer.compose(room);
 /* 45:54 */       room.gameEvents.clear();
 /* 46:   */     }
-/* 47:   */     MessageWriter status;
-/* 48:   */     List<Channel> filter;
 /* 49:57 */     for (HumanGameObject player : room.players.values()) {
 /* 50:58 */       if ((player.currentSnowWar != null) && (
 /* 51:59 */         (filter == null) || (filter.isEmpty()) || 
@@ -64,8 +63,8 @@
 /* 64:   */   }
 /* 65:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.games.snowwar.tasks.SnowArenaRun
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.game.games.snowwar.tasks.SnowArenaRun
+ * JD-Core Version:    0.7.0.1
  */

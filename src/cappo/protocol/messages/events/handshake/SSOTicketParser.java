@@ -33,7 +33,7 @@
 /*  33:    */ import java.util.Map;
 /*  34:    */ import java.util.Set;
 /*  35:    */ import java.util.concurrent.ConcurrentHashMap;
-/*  36:    */ import sun.misc.BASE64Decoder;
+/*  36:    */ import java.util.Base64;
 /*  37:    */ 
 /*  38:    */ public class SSOTicketParser
 /*  39:    */   extends IncomingMessageEvent
@@ -53,11 +53,11 @@
 /*  53:    */   
 /*  54:    */   public void messageReceived(Connection cn)
 /*  55:    */   {
-/*  56: 48 */     BASE64Decoder decoder = new BASE64Decoder();
+/*  56: 48 */     Base64.Decoder decoder = Base64.getMimeDecoder();
 /*  57: 49 */     String token = "";
 /*  58:    */     try
 /*  59:    */     {
-/*  60: 51 */       token = new String(decoder.decodeBuffer(cn.currentPacket.readString()));
+/*  60: 51 */       token = new String(decoder.decode(cn.currentPacket.readString()));
 /*  61:    */     }
 /*  62:    */     catch (Exception ex)
 /*  63:    */     {
@@ -393,8 +393,8 @@
 /* 393:    */   }
 /* 394:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.handshake.SSOTicketParser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.handshake.SSOTicketParser
+ * JD-Core Version:    0.7.0.1
  */

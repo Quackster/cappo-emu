@@ -422,7 +422,7 @@
 /* 422:    */       }
 /* 423:450 */       return true;
 /* 424:    */     }
-/* 425:453 */     PlayerData playerData = this.cn.getPlayerData();
+/* 425:453 */     playerData = this.cn.getPlayerData();
 /* 426:455 */     if (playerData.staffLevel > 1)
 /* 427:    */     {
 /* 428:    */       Avatar avatar;
@@ -763,7 +763,6 @@
 /* 763:776 */           Utils.AlertFromHotel(Client.connection.socket, cappo.game.utils.lang.LangTexts.texts[0] + give + cappo.game.utils.lang.LangTexts.texts[2] + "\n\n- " + playerData.userName);
 /* 764:777 */           return true;
 /* 765:    */         }
-/* 766:    */         Object ch;
 /* 767:779 */         if (parsed[0].equals(":massducks"))
 /* 768:    */         {
 /* 769:780 */           int give = Integer.parseInt(parsed[1]);
@@ -808,7 +807,6 @@
 /* 808:823 */           Utils.AlertFromHotel(plrConnection.socket, cappo.game.utils.lang.LangTexts.texts[0] + give + cappo.game.utils.lang.LangTexts.texts[1] + "\n\n- " + playerData.userName);
 /* 809:824 */           return true;
 /* 810:    */         }
-/* 811:    */         Object ch;
 /* 812:826 */         if (parsed[0].equals(":masscredits"))
 /* 813:    */         {
 /* 814:827 */           int give = Integer.parseInt(parsed[1]);
@@ -864,8 +862,8 @@
 /* 864:879 */           Iterator<Channel> itr = FactorialServerHandler.channels.iterator();
 /* 865:880 */           while (itr.hasNext())
 /* 866:    */           {
-/* 867:881 */             Channel ch = (Channel)itr.next();
-/* 868:882 */             Connection con = (Connection)ch.attr(FactorialServerHandler.CONNECTION).get();
+/* 867:881 */             ch = (Channel)itr.next();
+/* 868:882 */             Connection con = (Connection)((Channel)ch).attr(FactorialServerHandler.CONNECTION).get();
 /* 869:883 */             con.delBadge(badge);
 /* 870:    */           }
 /* 871:    */           try
@@ -953,8 +951,8 @@
 /* 953:    */   }
 /* 954:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.entity.live.Avatar
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.game.roomengine.entity.live.Avatar
+ * JD-Core Version:    0.7.0.1
  */

@@ -1,4 +1,5 @@
 /*   1:    */ package cappo.engine.network;
+import io.netty.channel.ChannelHandler;
 /*   2:    */ 
 /*   3:    */ import cappo.engine.logging.Log;
 /*   4:    */ import cappo.engine.player.Connection;
@@ -110,8 +111,12 @@
 /* 110:    */   }
 /* 111:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.network.FactorialServerHandler
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.engine.network.FactorialServerHandler
+
+ * JD-Core Version:    0.7.0.1
+
  */

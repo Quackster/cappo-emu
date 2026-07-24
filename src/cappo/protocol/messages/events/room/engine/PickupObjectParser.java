@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.protocol.messages.events.room.engine;
+import cappo.game.roomengine.itemInteractor.Interactor;
 /*  2:   */ 
 /*  3:   */ import cappo.engine.network.MessageReader;
 /*  4:   */ import cappo.engine.network.QueueWriter;
@@ -63,8 +64,12 @@
 /* 63:   */   }
 /* 64:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.room.engine.PickupObjectParser
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.protocol.messages.events.room.engine.PickupObjectParser
+
+ * JD-Core Version:    0.7.0.1
+
  */

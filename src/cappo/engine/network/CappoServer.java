@@ -56,7 +56,7 @@
 /*  56:    */     
 /*  57:    */ 
 /*  58: 67 */     ((ServerBootstrap)b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class).option(ChannelOption.SO_BACKLOG, Integer.valueOf(200)))
-/*  59: 68 */       .childHandler(new ChannelInitializer()
+/*  59: 68 */       .childHandler(new ChannelInitializer<SocketChannel>()
 /*  60:    */       {
 /*  61:    */         public void initChannel(SocketChannel ch)
 /*  62:    */           throws Exception
@@ -162,8 +162,8 @@
 /* 162:    */   }
 /* 163:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.network.CappoServer
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.engine.network.CappoServer
+ * JD-Core Version:    0.7.0.1
  */

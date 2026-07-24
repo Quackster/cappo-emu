@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.protocol.messages.composers.catalog;
+import cappo.game.catalog.Catalog;
 /*  2:   */ 
 /*  3:   */ import cappo.engine.network.MessageWriter;
 /*  4:   */ import cappo.game.catalog.Catalog.CatalogProduct;
@@ -19,8 +20,12 @@
 /* 19:   */   }
 /* 20:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.catalog.UniqueLimitedItemComposer
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.protocol.messages.composers.catalog.UniqueLimitedItemComposer
+
+ * JD-Core Version:    0.7.0.1
+
  */

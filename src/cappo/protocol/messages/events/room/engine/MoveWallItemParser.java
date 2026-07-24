@@ -46,7 +46,6 @@
 /* 46:51 */       QueueWriter.write(Main.socket, PlaceObjectErrorComposer.compose(11)); return;
 /* 47:   */     }
 /* 48:   */     char side;
-/* 49:   */     char side;
 /* 50:56 */     if (DataBits[2].equals("r")) {
 /* 51:57 */       side = 'r';
 /* 52:   */     } else {
@@ -58,8 +57,8 @@
 /* 58:   */   }
 /* 59:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.room.engine.MoveWallItemParser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.room.engine.MoveWallItemParser
+ * JD-Core Version:    0.7.0.1
  */

@@ -57,7 +57,7 @@
 /*  57:    */   
 /*  58:    */   public void writeBoolean(boolean in)
 /*  59:    */   {
-/*  60: 63 */     this.bytes[(this.writer++)] = (in ? 1 : 0);
+/*  60: 63 */     this.bytes[(this.writer++)] = ((byte)(in ? 1 : 0));
 /*  61:    */   }
 /*  62:    */   
 /*  63:    */   public void writeChar(char in)
@@ -117,8 +117,8 @@
 /* 117:    */   }
 /* 118:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.network.MessageWriter
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.engine.network.MessageWriter
+ * JD-Core Version:    0.7.0.1
  */

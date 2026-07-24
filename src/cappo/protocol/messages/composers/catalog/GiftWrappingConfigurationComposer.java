@@ -39,9 +39,9 @@
 /* 39:41 */         Composer.add(Integer.valueOf(i), ClientMessage);
 /* 40:   */       }
 /* 41:45 */       Composer.add(Integer.valueOf(GiftWrappingConfiguration.baseGiftFreeItems.size()), ClientMessage);
-/* 42:46 */       for (localIterator = GiftWrappingConfiguration.baseGiftFreeItems.keySet().iterator(); localIterator.hasNext();)
+/* 42:46 */       for (Iterator localIterator2 = GiftWrappingConfiguration.baseGiftFreeItems.keySet().iterator(); localIterator2.hasNext();)
 /* 43:   */       {
-/* 44:46 */         int colorSprite = ((Integer)localIterator.next()).intValue();
+/* 44:46 */         int colorSprite = ((Integer)localIterator2.next()).intValue();
 /* 45:47 */         Composer.add(Integer.valueOf(colorSprite), ClientMessage);
 /* 46:   */       }
 /* 47:49 */       Composer.endPacket(ClientMessage);
@@ -50,8 +50,8 @@
 /* 50:   */   }
 /* 51:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.catalog.GiftWrappingConfigurationComposer
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.composers.catalog.GiftWrappingConfigurationComposer
+ * JD-Core Version:    0.7.0.1
  */

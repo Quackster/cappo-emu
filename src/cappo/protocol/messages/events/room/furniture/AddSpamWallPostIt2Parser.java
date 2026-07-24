@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.protocol.messages.events.room.furniture;
+import cappo.game.roomengine.itemInteractor.Interactor;
 /*  2:   */ 
 /*  3:   */ import cappo.engine.network.MessageReader;
 /*  4:   */ import cappo.engine.player.Connection;
@@ -28,34 +29,32 @@
 /* 28:32 */     Main.currentPacket.readString();
 /* 29:   */     
 /* 30:34 */     String color = Main.currentPacket.readString();
-/* 31:   */     String str1;
-/* 32:35 */     switch ((str1 = color).hashCode())
-/* 33:   */     {
-/* 34:   */     case 1695802060: 
-/* 35:35 */       if (str1.equals("9CCEFF")) {
-/* 36:   */         break label178;
-/* 37:   */       }
-/* 38:   */       break;
-/* 39:   */     case 1695891988: 
-/* 40:35 */       if (str1.equals("9CFF9C")) {
-/* 41:   */         break label178;
-/* 42:   */       }
-/* 43:   */       break;
-/* 44:   */     case 2070451754: 
-/* 45:   */     case 2070841312: 
-/* 46:35 */       if ((str1.equals("FF9CFF")) || ((goto 177) && (str1.equals("FFFF33")))) {
-/* 47:   */         break label178;
-/* 48:   */       }
+/* 31:   */     String str1 = color;
+/* 32:35 */     boolean matched;
+/* 33:   */     switch (str1.hashCode())
+/* 34:   */     {
+/* 34b:  */     case 1695802060:
+/* 35:35 */       matched = str1.equals("9CCEFF");
+/* 37:   */       break;
+/* 39:   */     case 1695891988:
+/* 40:35 */       matched = str1.equals("9CFF9C");
+/* 42:   */       break;
+/* 44:   */     case 2070451754:
+/* 45:   */     case 2070841312:
+/* 46:35 */       matched = str1.equals("FF9CFF") || str1.equals("FFFF33");
+/* 48:   */       break;
+/* 48b:  */     default:
+/* 48c:  */       matched = false;
 /* 49:   */     }
-/* 50:43 */     return;
-/* 51:   */     label178:
+/* 50:43 */     if (!matched) {
+/* 50d:  */       return;
+/* 50e:  */     }
 /* 52:46 */     item.extraData.setExtraData(color.concat(" ").concat(Main.currentPacket.readString()));
 /* 53:47 */     room.wallItemUpdateNeeded(item);
 /* 54:   */   }
 /* 55:   */ }
-// INTERNAL ERROR //
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.room.furniture.AddSpamWallPostIt2Parser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.room.furniture.AddSpamWallPostIt2Parser
+ * JD-Core Version:    0.7.0.1
  */

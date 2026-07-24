@@ -73,7 +73,6 @@
 /*  73:    */       return;
 /*  74:    */     }
 /*  75:    */     int priceMultipler;
-/*  76:    */     int priceMultipler;
 /*  77: 91 */     if (quantity > 5) {
 /*  78: 92 */       priceMultipler = quantity - (quantity / 5 * 2 - 1);
 /*  79:    */     } else {
@@ -404,8 +403,8 @@
 /* 404:    */   }
 /* 405:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.catalog.PurchaseFromCatalogParser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.catalog.PurchaseFromCatalogParser
+ * JD-Core Version:    0.7.0.1
  */

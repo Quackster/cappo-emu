@@ -54,11 +54,10 @@
 /*  54:    */         }
 /*  55:    */       }
 /*  56:    */     }
-/*  57: 60 */     Object extra = { cn, roomList };
+/*  57: 60 */     Object[] extra = { cn, roomList };
 /*  58: 62 */     if (roomList.size() < 50)
 /*  59:    */     {
 /*  60:    */       DatabaseQueryTask queryTask;
-/*  61:    */       DatabaseQueryTask queryTask;
 /*  62: 64 */       if (type == 2)
 /*  63:    */       {
 /*  64: 65 */         queryTask = new DatabaseQueryTask("SELECT * FROM rooms WHERE user_name = ? ORDER BY caption DESC LIMIT " + (50 - roomList.size()) + ";", roomsCallBack, extra, new Object[] { search });
@@ -122,8 +121,8 @@
 /* 122:    */   }
 /* 123:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.navigator.RoomTextSearchParser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.navigator.RoomTextSearchParser
+ * JD-Core Version:    0.7.0.1
  */

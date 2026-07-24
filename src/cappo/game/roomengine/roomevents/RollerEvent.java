@@ -1,4 +1,6 @@
 /*   1:    */ package cappo.game.roomengine.roomevents;
+import cappo.game.roomengine.itemInteractor.Interactor;
+import cappo.game.roomengine.entity.item.floor.RoomFloorItemData;
 /*   2:    */ 
 /*   3:    */ import cappo.engine.threadpools.RoomTask;
 /*   4:    */ import cappo.game.collections.BaseItem;
@@ -155,8 +157,12 @@
 /* 155:    */   }
 /* 156:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.roomevents.RollerEvent
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.game.roomengine.roomevents.RollerEvent
+
+ * JD-Core Version:    0.7.0.1
+
  */

@@ -26,7 +26,6 @@
 /* 26:   */       }
 /* 27:34 */       Square square = model.getSquare(xy);
 /* 28:   */       char c;
-/* 29:   */       char c;
 /* 30:36 */       if (square == null)
 /* 31:   */       {
 /* 32:37 */         c = 'x';
@@ -44,8 +43,8 @@
 /* 44:   */   }
 /* 45:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.room.engine.FloorHeightMapComposer
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.composers.room.engine.FloorHeightMapComposer
+ * JD-Core Version:    0.7.0.1
  */

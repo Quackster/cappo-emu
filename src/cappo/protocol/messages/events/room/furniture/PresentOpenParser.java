@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.protocol.messages.events.room.furniture;
+import cappo.game.catalog.Catalog;
 /*  2:   */ 
 /*  3:   */ import cappo.engine.network.MessageReader;
 /*  4:   */ import cappo.engine.player.Connection;
@@ -34,8 +35,12 @@
 /* 34:   */   }
 /* 35:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.room.furniture.PresentOpenParser
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.protocol.messages.events.room.furniture.PresentOpenParser
+
+ * JD-Core Version:    0.7.0.1
+
  */

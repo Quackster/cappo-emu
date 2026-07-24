@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.game.roomengine.entity.item.floor.wired.condition;
+import cappo.game.roomengine.entity.item.floor.RoomFloorItemData;
 /*  2:   */ 
 /*  3:   */ import cappo.engine.player.Connection;
 /*  4:   */ import cappo.engine.threadpools.RoomTask;
@@ -42,8 +43,12 @@
 /* 42:   */   }
 /* 43:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.entity.item.floor.wired.condition.FurniHasUser
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.game.roomengine.entity.item.floor.wired.condition.FurniHasUser
+
+ * JD-Core Version:    0.7.0.1
+
  */

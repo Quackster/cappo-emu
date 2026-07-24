@@ -1,4 +1,5 @@
 /*   1:    */ package cappo.game.roomgames.football.utils;
+import cappo.game.roomengine.itemInteractor.Interactor;
 /*   2:    */ 
 /*   3:    */ import cappo.engine.logging.Log;
 /*   4:    */ import cappo.engine.threadpools.ItemTask;
@@ -137,8 +138,12 @@
 /* 137:    */   }
 /* 138:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomgames.football.utils.BallonFootBall
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.game.roomgames.football.utils.BallonFootBall
+
+ * JD-Core Version:    0.7.0.1
+
  */

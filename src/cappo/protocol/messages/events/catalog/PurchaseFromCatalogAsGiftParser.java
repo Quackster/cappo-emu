@@ -47,7 +47,6 @@
 /*  47:    */ 
 /*  48: 50 */     BaseItem boxBaseItem = (BaseItem)GiftWrappingConfiguration.baseGiftItems.get(Integer.valueOf(boxSpriteId));
 /*  49:    */     int wrappingCost;
-/*  50:    */     int wrappingCost;
 /*  51: 51 */     if (boxBaseItem == null)
 /*  52:    */     {
 /*  53: 52 */       boxBaseItem = (BaseItem)GiftWrappingConfiguration.baseGiftFreeItems.get(Integer.valueOf(boxSpriteId));
@@ -159,8 +158,8 @@
 /* 159:    */   }
 /* 160:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.catalog.PurchaseFromCatalogAsGiftParser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.catalog.PurchaseFromCatalogAsGiftParser
+ * JD-Core Version:    0.7.0.1
  */

@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.protocol.messages.composers.room.engine;
+import cappo.game.roomengine.itemInteractor.Interactor;
 /*  2:   */ 
 /*  3:   */ import cappo.engine.network.MessageWriter;
 /*  4:   */ import cappo.game.collections.BaseItem;
@@ -26,8 +27,12 @@
 /* 26:   */   }
 /* 27:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.room.engine.WallItemComposer
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.protocol.messages.composers.room.engine.WallItemComposer
+
+ * JD-Core Version:    0.7.0.1
+
  */

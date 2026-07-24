@@ -243,12 +243,11 @@
 /* 243:262 */     item.AllowGift = (userdata.getInt("allow_gift") == 1);
 /* 244:263 */     item.AllowInventoryStack = (userdata.getInt("allow_inventory_stack") == 1);
 /* 245:264 */     String tmp = userdata.getString("vending_ids");
-/* 246:    */     String val;
 /* 247:265 */     if (!tmp.isEmpty())
 /* 248:    */     {
 /* 249:266 */       String[] values = tmp.split(",");
 /* 250:267 */       item.vendingIds = new ArrayList(values.length);
-/* 251:268 */       for (val : values) {
+/* 251:268 */       for (String val : values) {
 /* 252:269 */         item.vendingIds.add(Integer.valueOf(Integer.parseInt(val.trim())));
 /* 253:    */       }
 /* 254:    */     }
@@ -257,181 +256,78 @@
 /* 257:275 */     item.itemExtraType = userdata.getInt("extradata_type");
 /* 258:276 */     item.interactionCount = userdata.getInt("cycle_count");
 /* 259:277 */     String interactionKey = userdata.getString("interaction_type");
-/* 260:279 */     switch ((val = interactionKey).hashCode())
-/* 261:    */     {
-/* 262:    */     case -2141127330: 
-/* 263:279 */       if (val.equals("triggerwalkonfurni")) {}
-/* 264:    */       break;
-/* 265:    */     case -1961628894: 
-/* 266:279 */       if (val.equals("actionmoverotate")) {}
-/* 267:    */       break;
-/* 268:    */     case -1779610334: 
-/* 269:279 */       if (val.equals("conditiontimelessthan")) {}
-/* 270:    */       break;
-/* 271:    */     case -1646089487: 
-/* 272:279 */       if (val.equals("triggergameend")) {}
-/* 273:    */       break;
-/* 274:    */     case -1632039791: 
-/* 275:279 */       if (val.equals("footballgoalred")) {}
-/* 276:    */       break;
-/* 277:    */     case -1457966386: 
-/* 278:279 */       if (val.equals("footballcountered")) {}
-/* 279:    */       break;
-/* 280:    */     case -1330923272: 
-/* 281:279 */       if (val.equals("triggergamestart")) {}
-/* 282:    */       break;
-/* 283:    */     case -1281123449: 
-/* 284:279 */       if (val.equals("fbgate")) {}
-/* 285:    */       break;
-/* 286:    */     case -1158766137: 
-/* 287:279 */       if (val.equals("actiontogglestate")) {}
-/* 288:    */       break;
-/* 289:    */     case -1158741005: 
-/* 290:279 */       if (val.equals("banzaiscoreyellow")) {}
-/* 291:    */       break;
-/* 292:    */     case -1097324337: 
-/* 293:279 */       if (val.equals("haloweenpool")) {
-/* 294:    */         break;
-/* 295:    */       }
-/* 296:    */       break;
-/* 297:    */     case -946436407: 
-/* 298:279 */       if (val.equals("footballcounterblue")) {}
-/* 299:    */       break;
-/* 300:    */     case -926780484: 
-/* 301:279 */       if (val.equals("freezebluegate")) {}
-/* 302:    */       break;
-/* 303:    */     case -866873228: 
-/* 304:279 */       if (val.equals("footballgoalyellow")) {}
-/* 305:    */       break;
-/* 306:    */     case -853286284: 
-/* 307:279 */       if (val.equals("actionshowmessage")) {}
-/* 308:    */       break;
-/* 309:    */     case -736943357: 
-/* 310:279 */       if (val.equals("footballgoalgreen")) {}
-/* 311:    */       break;
-/* 312:    */     case -556856645: 
-/* 313:279 */       if (val.equals("triggerstatechanged")) {}
-/* 314:    */       break;
-/* 315:    */     case -474291984: 
-/* 316:279 */       if (val.equals("triggerwalkofffurni")) {}
-/* 317:    */       break;
-/* 318:    */     case -409042419: 
-/* 319:279 */       if (val.equals("triggerscoreachieved")) {}
-/* 320:    */       break;
-/* 321:    */     case 3446812: 
-/* 322:279 */       if (val.equals("pool")) {
-/* 323:    */         break;
-/* 324:    */       }
-/* 325:    */       break;
-/* 326:    */     case 206743774: 
-/* 327:279 */       if (val.equals("conditiontimemorethan")) {}
-/* 328:    */       break;
-/* 329:    */     case 357331312: 
-/* 330:279 */       if (val.equals("lowpool")) {
-/* 331:    */         break;
-/* 332:    */       }
-/* 333:    */       break;
-/* 334:    */     case 394888333: 
-/* 335:279 */       if (val.equals("triggertimer")) {}
-/* 336:    */       break;
-/* 337:    */     case 445798672: 
-/* 338:279 */       if (val.equals("conditionfurnishaveusers")) {}
-/* 339:    */       break;
-/* 340:    */     case 474572888: 
-/* 341:279 */       if (val.equals("banzaigateblue")) {}
-/* 342:    */       break;
-/* 343:    */     case 683047486: 
-/* 344:279 */       if (val.equals("conditionstatepos")) {}
-/* 345:    */       break;
-/* 346:    */     case 730023540: 
-/* 347:279 */       if (val.equals("footballcountergreen")) {}
-/* 348:    */       break;
-/* 349:    */     case 776710065: 
-/* 350:279 */       if (val.equals("actionposreset")) {}
-/* 351:    */       break;
-/* 352:    */     case 842217762: 
-/* 353:279 */       if (val.equals("conditiontriggeronfurni")) {}
-/* 354:    */       break;
-/* 355:    */     case 882405413: 
-/* 356:279 */       if (val.equals("triggerroomenter")) {}
-/* 357:    */       break;
-/* 358:    */     case 945904730: 
-/* 359:279 */       if (val.equals("footballgoalblue")) {}
-/* 360:    */       break;
-/* 361:    */     case 1034986393: 
-/* 362:279 */       if (val.equals("banzaiscoreblue")) {}
-/* 363:    */       break;
-/* 364:    */     case 1373541900: 
-/* 365:279 */       if (val.equals("actionresettimer")) {}
-/* 366:    */       break;
-/* 367:    */     case 1445634455: 
-/* 368:279 */       if (val.equals("freezegreengate")) {}
-/* 369:    */       break;
-/* 370:    */     case 1449759986: 
-/* 371:279 */       if (val.equals("banzaigateyellow")) {}
-/* 372:    */       break;
-/* 373:    */     case 1463098422: 
-/* 374:279 */       if (val.equals("actiongivereward")) {}
-/* 375:    */       break;
-/* 376:    */     case 1468938953: 
-/* 377:279 */       if (val.equals("triggeronusersay")) {}
-/* 378:    */       break;
-/* 379:    */     case 1539344595: 
-/* 380:279 */       if (val.equals("banzaigatered")) {}
-/* 381:    */       break;
-/* 382:    */     case 1546885532: 
-/* 383:279 */       if (val.equals("actionteleportto")) {}
-/* 384:    */       break;
-/* 385:    */     case 1557422450: 
-/* 386:279 */       if (val.equals("banzaiscorered")) {}
-/* 387:    */       break;
-/* 388:    */     case 1625719062: 
-/* 389:279 */       if (val.equals("freezeyellowgate")) {}
-/* 390:    */       break;
-/* 391:    */     case 1659427619: 
-/* 392:279 */       if (val.equals("footballcounteryellow")) {}
-/* 393:    */       break;
-/* 394:    */     case 1831638725: 
-/* 395:279 */       if (val.equals("banzaigategreen")) {}
-/* 396:    */       break;
-/* 397:    */     case 1842699584: 
-/* 398:279 */       if (val.equals("triggerrepeater")) {}
-/* 399:    */       break;
-/* 400:    */     case 2024588196: 
-/* 401:279 */       if (val.equals("banzaiscoregreen")) {}
-/* 402:    */       break;
-/* 403:    */     case 2039042661: 
-/* 404:279 */       if (val.equals("freezeredgate")) {}
-/* 405:    */       break;
-/* 406:    */     case 2126263467: 
-/* 407:279 */       if (!val.equals("actiongivescore"))
-/* 408:    */       {
-/* 409:    */         break label1705;
-/* 410:283 */         item.itemType = ItemType.WATER;
-/* 411:    */         break label1705;
-/* 412:294 */         item.itemType = ItemType.ROOMGAME_GATE;
-/* 413:    */         break label1705;
-/* 414:304 */         item.itemType = ItemType.ROOMGAME_SCORE;
-/* 415:    */         break label1705;
-/* 416:310 */         item.itemType = ItemType.FOOTBALL_GOAL;
-/* 417:    */         break label1705;
-/* 418:322 */         item.itemType = ItemType.WIRED_TRIGGER;
-/* 419:323 */         item.interactor = Interactor.iterWired;
-/* 420:324 */         item.interactorType = Interactor.GetInteractorType(interactionKey);
-/* 421:    */       }
-/* 422:    */       else
-/* 423:    */       {
-/* 424:334 */         item.itemType = ItemType.WIRED_EFFECT;
-/* 425:335 */         item.interactor = Interactor.iterWired;
-/* 426:336 */         item.interactorType = Interactor.GetInteractorType(interactionKey);
-/* 427:    */         break label1705;
-/* 428:343 */         item.itemType = ItemType.WIRED_CONDITION;
-/* 429:344 */         item.interactor = Interactor.iterWired;
-/* 430:345 */         item.interactorType = Interactor.GetInteractorType(interactionKey);
-/* 431:    */       }
-/* 432:    */       break;
-/* 433:    */     }
-/* 434:    */     label1705:
+    switch (interactionKey)
+    {
+      case "triggerwalkonfurni":
+      case "triggerwalkofffurni":
+      case "triggergameend":
+      case "triggergamestart":
+      case "triggertimer":
+      case "triggerrepeater":
+      case "triggerroomenter":
+      case "triggeronusersay":
+      case "triggerstatechanged":
+      case "triggerscoreachieved":
+        item.itemType = ItemType.WIRED_TRIGGER;
+        item.interactor = Interactor.iterWired;
+        item.interactorType = Interactor.GetInteractorType(interactionKey);
+        break;
+      case "conditionfurnishaveusers":
+      case "conditionstatepos":
+      case "conditiontriggeronfurni":
+      case "conditiontimelessthan":
+      case "conditiontimemorethan":
+        item.itemType = ItemType.WIRED_CONDITION;
+        item.interactor = Interactor.iterWired;
+        item.interactorType = Interactor.GetInteractorType(interactionKey);
+        break;
+      case "actionmoverotate":
+      case "actiongivescore":
+      case "actionposreset":
+      case "actionresettimer":
+      case "actiongivereward":
+      case "actionteleportto":
+      case "actiontogglestate":
+      case "actionshowmessage":
+        item.itemType = ItemType.WIRED_EFFECT;
+        item.interactor = Interactor.iterWired;
+        item.interactorType = Interactor.GetInteractorType(interactionKey);
+        break;
+      case "fbgate":
+      case "banzaigatered":
+      case "banzaigategreen":
+      case "banzaigateblue":
+      case "banzaigateyellow":
+      case "freezebluegate":
+      case "freezegreengate":
+      case "freezeredgate":
+      case "freezeyellowgate":
+        item.itemType = ItemType.ROOMGAME_GATE;
+        break;
+      case "banzaiscorered":
+      case "banzaiscoregreen":
+      case "banzaiscoreblue":
+      case "banzaiscoreyellow":
+      case "footballcountered":
+      case "footballcounterblue":
+      case "footballcountergreen":
+      case "footballcounteryellow":
+        item.itemType = ItemType.ROOMGAME_SCORE;
+        break;
+      case "footballgoalred":
+      case "footballgoalblue":
+      case "footballgoalgreen":
+      case "footballgoalyellow":
+        item.itemType = ItemType.FOOTBALL_GOAL;
+        break;
+      case "haloweenpool":
+      case "pool":
+      case "lowpool":
+        item.itemType = ItemType.WATER;
+        break;
+      default:
+        break;
+    }
 /* 435:349 */     if (item.interactorType == null)
 /* 436:    */     {
 /* 437:350 */       item.interactorType = Interactor.GetInteractorType(interactionKey);
@@ -463,8 +359,8 @@
 /* 463:    */   }
 /* 464:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.collections.BaseItem
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.game.collections.BaseItem
+ * JD-Core Version:    0.7.0.1
  */

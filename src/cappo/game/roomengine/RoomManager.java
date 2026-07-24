@@ -43,7 +43,7 @@
 /*  43:    */   
 /*  44:    */   private static GameMapBase loadModel(String key, DBResult result, boolean custom)
 /*  45:    */   {
-/*  46: 50 */     model = null;
+/*  46: 50 */     GameMapBase model = null;
 /*  47:    */     try
 /*  48:    */     {
 /*  49: 53 */       if (custom) {
@@ -94,6 +94,7 @@
 /*  94:    */     catch (Exception ex)
 /*  95:    */     {
 /*  96: 95 */       Log.printException("", ex);
+/*  96:   */       return model;
 /*  97:    */     }
 /*  98:    */   }
 /*  99:    */   
@@ -298,8 +299,8 @@
 /* 298:    */   }
 /* 299:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.RoomManager
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.game.roomengine.RoomManager
+ * JD-Core Version:    0.7.0.1
  */

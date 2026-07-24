@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.protocol.messages.events.room.furniture;
+import cappo.game.roomengine.itemInteractor.Interactor;
 /*  2:   */ 
 /*  3:   */ import cappo.engine.network.MessageReader;
 /*  4:   */ import cappo.engine.network.QueueWriter;
@@ -49,7 +50,6 @@
 /* 49:52 */       QueueWriter.write(Main.socket, PlaceObjectErrorComposer.compose(11)); return;
 /* 50:   */     }
 /* 51:   */     char side;
-/* 52:   */     char side;
 /* 53:57 */     if (DataBits[2].equals("r")) {
 /* 54:58 */       side = 'r';
 /* 55:   */     } else {
@@ -65,8 +65,12 @@
 /* 65:   */   }
 /* 66:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.room.furniture.PlacePostItParser
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.protocol.messages.events.room.furniture.PlacePostItParser
+
+ * JD-Core Version:    0.7.0.1
+
  */

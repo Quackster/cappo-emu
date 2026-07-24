@@ -6,7 +6,7 @@
 /*  6:   */ import cappo.protocol.messages.composers.handshake.BannerTokenComposer;
 /*  7:   */ import java.math.BigInteger;
 /*  8:   */ import java.security.SecureRandom;
-/*  9:   */ import sun.misc.BASE64Encoder;
+/*  9:   */ import java.util.Base64;
 /* 10:   */ 
 /* 11:   */ public class InitCryptoParser
 /* 12:   */   extends IncomingMessageEvent
@@ -48,13 +48,13 @@
 /* 48:   */     }
 /* 49:53 */     Main.InitDH(prime, generator, Main.generateRandomHexString(30));
 /* 50:   */     
-/* 51:55 */     BASE64Encoder encoder = new BASE64Encoder();
-/* 52:56 */     QueueWriter.write(Main.socket, BannerTokenComposer.compose(encoder.encodeBuffer(buf).replaceAll("\r\n", "")));
+/* 51:55 */     String encoded = Base64.getEncoder().encodeToString(buf);
+/* 52:56 */     QueueWriter.write(Main.socket, BannerTokenComposer.compose(encoded));
 /* 53:   */   }
 /* 54:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.handshake.InitCryptoParser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.handshake.InitCryptoParser
+ * JD-Core Version:    0.7.0.1
  */

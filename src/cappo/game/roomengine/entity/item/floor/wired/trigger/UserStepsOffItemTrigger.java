@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.game.roomengine.entity.item.floor.wired.trigger;
+import cappo.game.roomengine.entity.item.floor.RoomFloorItemData;
 /*  2:   */ 
 /*  3:   */ import cappo.game.games.snowwar.Direction8;
 /*  4:   */ import cappo.game.roomengine.entity.item.floor.FloorItem;
@@ -92,8 +93,12 @@
 /* 92:   */   }
 /* 93:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.entity.item.floor.wired.trigger.UserStepsOffItemTrigger
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.game.roomengine.entity.item.floor.wired.trigger.UserStepsOffItemTrigger
+
+ * JD-Core Version:    0.7.0.1
+
  */

@@ -97,7 +97,6 @@
 /*  97:    */   private void parseChatConfiguration(RentalBot bot, String data)
 /*  98:    */   {
 /*  99:    */     String[] tmp;
-/* 100:    */     String[] tmp;
 /* 101: 93 */     if (data.indexOf(";#;") == -1) {
 /* 102: 94 */       tmp = data.split(";");
 /* 103:    */     } else {
@@ -120,8 +119,8 @@
 /* 120:    */   }
 /* 121:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.room.bots.SetBotSkillParser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.room.bots.SetBotSkillParser
+ * JD-Core Version:    0.7.0.1
  */

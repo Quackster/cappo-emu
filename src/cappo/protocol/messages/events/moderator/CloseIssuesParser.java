@@ -33,14 +33,12 @@
 /* 33:   */       return;
 /* 34:   */     }
 /* 35:   */     MessageWriter packet;
-/* 36:   */     MessageWriter packet;
 /* 37:40 */     if (action == 1)
 /* 38:   */     {
 /* 39:41 */       packet = IssueCloseNotificationComposer.compose(1);
 /* 40:   */     }
 /* 41:   */     else
 /* 42:   */     {
-/* 43:   */       MessageWriter packet;
 /* 44:42 */       if (action == 2) {
 /* 45:43 */         packet = IssueCloseNotificationComposer.compose(2);
 /* 46:   */       } else {
@@ -67,8 +65,8 @@
 /* 67:   */   }
 /* 68:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.moderator.CloseIssuesParser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.moderator.CloseIssuesParser
+ * JD-Core Version:    0.7.0.1
  */

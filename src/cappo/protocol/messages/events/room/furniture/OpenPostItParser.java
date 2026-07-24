@@ -1,4 +1,5 @@
 /*  1:   */ package cappo.protocol.messages.events.room.furniture;
+import cappo.game.roomengine.itemInteractor.Interactor;
 /*  2:   */ 
 /*  3:   */ import cappo.engine.network.MessageReader;
 /*  4:   */ import cappo.engine.network.QueueWriter;
@@ -28,8 +29,12 @@
 /* 28:   */   }
 /* 29:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.room.furniture.OpenPostItParser
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+
+ * Qualified Name:     cappo.protocol.messages.events.room.furniture.OpenPostItParser
+
+ * JD-Core Version:    0.7.0.1
+
  */

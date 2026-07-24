@@ -56,6 +56,12 @@
                 <version>3.11.0</version>
                 <configuration>
                     <release>8</release>
+                    <compilerArgs>
+                        <arg>-Xmaxerrs</arg>
+                        <arg>2000</arg>
+                        <arg>-Xmaxwarns</arg>
+                        <arg>100</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
 

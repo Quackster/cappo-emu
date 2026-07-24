@@ -68,9 +68,9 @@
 /* 68:   */     }
 /* 69:68 */     List<PlayerData> PlayersFriends = new ArrayList();
 /* 70:69 */     Object Players = new ArrayList(Results.size());
-/* 71:71 */     for (??? = Results.iterator(); ((Iterator)???).hasNext();)
+/* 71:71 */     for (Iterator<Integer> localIterator = Results.iterator(); localIterator.hasNext();)
 /* 72:   */     {
-/* 73:71 */       int UserId = ((Integer)((Iterator)???).next()).intValue();
+/* 73:71 */       int UserId = localIterator.next().intValue();
 /* 74:   */       try
 /* 75:   */       {
 /* 76:73 */         PlayerData User = Clients.getPlayerData(UserId);
@@ -91,8 +91,8 @@
 /* 91:   */   }
 /* 92:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.friendlist.HabboSearchParser
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.protocol.messages.events.friendlist.HabboSearchParser
+ * JD-Core Version:    0.7.0.1
  */

@@ -76,7 +76,6 @@
 /*  76:    */     
 /*  77: 90 */     this.team = teamId;
 /*  78:    */     SpawnPoint spawn;
-/*  79:    */     SpawnPoint spawn;
 /*  80: 93 */     if (teamId == 1)
 /*  81:    */     {
 /*  82: 94 */       int i = Utils.GetRandomNumber(0, this.currentSnowWar.ArenaType.spawnsBLUE.size() - 1);
@@ -649,8 +648,8 @@
 /* 649:    */   }
 /* 650:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.games.snowwar.gameobjects.HumanGameObject
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.game.games.snowwar.gameobjects.HumanGameObject
+ * JD-Core Version:    0.7.0.1
  */

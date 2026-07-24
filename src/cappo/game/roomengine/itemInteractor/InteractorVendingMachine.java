@@ -34,7 +34,7 @@
 /* 34:36 */     boolean onFront = (avatar.x == xy[0]) && (avatar.y == xy[1]);
 /* 35:37 */     boolean onTop = false;
 /* 36:38 */     if (!onFront) {
-/* 37:39 */       onFront = onTop = (avatar.x == Item.getX()) && (avatar.y == Item.getY()) ? 1 : 0;
+/* 37:39 */       onFront = onTop = (avatar.x == Item.getX()) && (avatar.y == Item.getY());
 /* 38:   */     }
 /* 39:42 */     if (onFront)
 /* 40:   */     {
@@ -60,8 +60,8 @@
 /* 60:   */   public void OnPickUp(RoomTask room, Connection User, GenericFloorItem Item) {}
 /* 61:   */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.itemInteractor.InteractorVendingMachine
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.game.roomengine.itemInteractor.InteractorVendingMachine
+ * JD-Core Version:    0.7.0.1
  */
