@@ -55,6 +55,13 @@ public class User_WALK
   
   private Square findBestPassThrough(RoomTask room, Set<Square> opened, Square start, Square goal)
   {
+    // Greedy best-first step: among the opened (adjacent) squares, pick the
+    // walkable one with the lowest cost toward the goal. The decompiled source
+    // had mangled this into two nested if-checks with empty bodies, so for a
+    // normal avatar (allowOverride == false) `best` was never assigned and the
+    // method always returned null -- which made findBestPath return null, kept
+    // walkPath null, and caused run() to call stopWalk() on the first tick, so
+    // the avatar never moved. Reconstructed to match canWalk() (see run()).
     Square best = null;
     for (Square square : opened)
     {
@@ -63,11 +70,14 @@ public class User_WALK
       }
       if (!this.liveEntity.allowOverride)
       {
-        if (room.squareFlag.have(square.xy, 4)) {
-          if ((!room.roomData.haveFlag(8)) && (room.squareHasUsers(square.xy))) {}
+        if (!room.squareFlag.have(square.xy, 4)) {
+          continue;
+        }
+        if ((!room.roomData.haveFlag(8)) && (room.squareHasUsers(square.xy))) {
+          continue;
         }
       }
-      else if ((best == null) || (square.getLocalCost(start, goal) < best.getLocalCost(start, goal))) {
+      if ((best == null) || (square.getLocalCost(start, goal) < best.getLocalCost(start, goal))) {
         best = square;
       }
     }
