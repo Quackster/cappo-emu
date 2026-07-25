@@ -31,8 +31,8 @@ public class SnowWar
   
   public SnowWar()
   {
-    super(0, "snowwar", "93d4f3", "", "http://dcr.lavvos.pl/lavvos/c_images/gamecenter_snowwar/");
+    super(0, "snowwar", "93d4f3", "", "http://localhost/c_images/gamecenter_snowwar/");
   }
 }
 
-
+

@@ -7,8 +7,8 @@ public class BaseJump
 {
   public BaseJump()
   {
-    super(3, "basejump", "68bbd2", "", "http://dcr.lavvos.pl/lavvos/c_images/gamecenter_basejump/");
+    super(3, "basejump", "68bbd2", "", "http://localhost/c_images/gamecenter_basejump/");
   }
 }
 
-
+
