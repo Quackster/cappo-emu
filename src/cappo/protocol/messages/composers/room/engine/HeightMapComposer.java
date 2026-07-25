@@ -31,7 +31,12 @@ public class HeightMapComposer
         sb.append(heightChar(square.height));
       }
     }
-    MessageWriter writer = new MessageWriter();
+    // The heightmap is a single length-prefixed string, so the buffer must hold
+    // the whole string plus the 4-byte length prefix and 2-byte header. The
+    // default 1000-byte MessageWriter overflows for any room larger than ~31x31
+    // (e.g. model_2=2039, model_5=1189, model_8=1187 bytes), which throws an
+    // ArrayIndexOutOfBoundsException and aborts the whole room-entry sequence.
+    MessageWriter writer = new MessageWriter(sb.length() + 16);
     Composer.initPacket(HEADER, writer);
     Composer.add(sb.toString(), writer);
     Composer.endPacket(writer);
