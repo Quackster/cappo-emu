@@ -49,6 +49,20 @@
         <!-- The original project keeps its sources directly under ./src -->
         <sourceDirectory>src</sourceDirectory>
 
+        <!-- cappo.engine.Server loads Cappo.properties from the classpath root
+             via getResourceAsStream("Cappo.properties"). Without this resources
+             block, Maven only compiles .java from src/ and never copies
+             Cappo.properties to target/classes/, so the server NPEs at boot.
+             Keep secrets out of git: Cappo.properties is in .gitignore. -->
+        <resources>
+            <resource>
+                <directory>src</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
