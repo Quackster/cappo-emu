@@ -18,7 +18,6 @@ public class CatalogPageComposer
     MessageWriter ClientMessage = new MessageWriter(50000);
     Composer.initPacket(HEADER, ClientMessage);
     Composer.add(Integer.valueOf(Page.pageId), ClientMessage);
-    Composer.add(catalogType, ClientMessage);
     Composer.add(Page.Layout, ClientMessage);
     SerializeCatalogPageData.parse(ClientMessage, Page.PageData);
     Composer.add(Integer.valueOf(Page.items.size()), ClientMessage);

@@ -20,7 +20,7 @@ public class GetCatalogPageParser
       return;
     }
     int offerId = cn.currentPacket.readInt();
-    String catalogType = cn.currentPacket.readString();
+    String catalogType = "NORMAL";
     if ((page.isCacheDisabled) || (offerId != -1) || (!catalogType.equals("NORMAL")))
     {
       QueueWriter.write(cn.socket, CatalogPageComposer.compose(page, offerId, catalogType));
@@ -36,4 +36,4 @@ public class GetCatalogPageParser
   }
 }
 
-
+

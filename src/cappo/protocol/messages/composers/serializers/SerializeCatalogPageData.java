@@ -11,10 +11,10 @@ public class SerializeCatalogPageData
     {
       Composer.add(Integer.valueOf(PagData.length), ClientMessage);
       for (String Data : PagData) {
-        Composer.add(Data, ClientMessage);
+        Composer.add((Data == null) ? "" : Data, ClientMessage);
       }
     }
   }
 }
 
-
+
