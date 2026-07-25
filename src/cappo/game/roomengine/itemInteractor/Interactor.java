@@ -1,40 +1,40 @@
-/*   1:    */ package cappo.game.roomengine.itemInteractor;
-/*   2:    */ 
-/*   3:    */ import cappo.engine.player.Connection;
-/*   4:    */ import cappo.engine.threadpools.RoomTask;
-/*   5:    */ import cappo.game.roomengine.entity.item.floor.FloorItem;
-/*   6:    */ import cappo.game.roomengine.entity.item.floor.GenericFloorItem;
-/*   7:    */ import cappo.game.roomengine.entity.item.wall.GenericWallItem;
-/*   8:    */ 
-/*   9:    */ public abstract class Interactor
-/*  10:    */ {
-/*  11: 21 */   public static final Interactor iterWired = new InteractorWiredFurnis();
-/*  12: 23 */   public static final Interactor iterDefault = new InteractorSimple();
-/*  13: 24 */   public static final Interactor iterOutfit = new InteractorOutfit();
-/*  14: 25 */   public static final Interactor iterTeleport = new InteractorTeleport();
-/*  15: 26 */   public static final Interactor iterVendingMachine = new InteractorVendingMachine();
-/*  16: 27 */   public static final Interactor iterOneWayGate = new InteractorOneWayGate();
-/*  17: 28 */   public static final Interactor iterDice = new InteractorDice();
-/*  18: 29 */   public static final Interactor iterHabboWheel = new InteractorHabboWheel();
-/*  19: 30 */   public static final Interactor iterTimer = new InteractorTimer();
-/*  20: 31 */   public static final Interactor iterJukebox = new InteractorTrax();
-/*  21:    */   public abstract void OnPlace(RoomTask paramRoomTask, Connection paramConnection, GenericFloorItem paramGenericFloorItem);
-/*  22:    */   
-/*  23:    */   public abstract void OnPickUp(RoomTask paramRoomTask, Connection paramConnection, GenericFloorItem paramGenericFloorItem);
-/*  24:    */   
-/*  25:    */   public abstract void OnTriggerFloor(RoomTask paramRoomTask, Connection paramConnection, FloorItem paramFloorItem, int paramInt, boolean paramBoolean);
-/*  26:    */   
-/*  27:    */   public abstract void OnTriggerWall(RoomTask paramRoomTask, Connection paramConnection, GenericWallItem paramGenericWallItem, int paramInt, boolean paramBoolean);
-/*  28:    */   
-/*  29:    */   public static enum InteractorType
-/*  30:    */   {
-/*  31: 35 */     none,  gift,  postit,  walkeablechange,  roomeffect,  ecotron_box,  bed,  scoreboard,  vendingmachine,  alert,  onewaygate,  loveshuffler,  habbowheel,  dice,  bottle,  teleport,  rentals,  pet,  pool,  roller,  iceskates,  normslaskates,  lowpool,  haloweenpool,  football,  fbgate,  footballcountergreen,  footballcounteryellow,  footballcounterblue,  footballcounterred,  banzaigateblue,  banzaigatered,  banzaigateyellow,  banzaigategreen,  banzaifloor,  banzaiscoreblue,  banzaiscorered,  banzaiscoreyellow,  banzaiscoregreen,  banzaicounter,  banzaitele,  banzaipuck,  banzaipyramid,  freezetimer,  freezeexit,  freezeredcounter,  freezebluecounter,  freezeyellowcounter,  freezegreencounter,  freezeyellowgate,  freezeredgate,  freezegreengate,  freezebluegate,  freezetileblock,  freezetile,  jukebox,  puzzlebox,  triggertimer,  triggerroomenter,  triggergameend,  triggergamestart,  triggerrepeater,  triggeronusersay,  triggerscoreachieved,  triggerstatechanged,  triggerwalkonfurni,  triggerwalkofffurni,  actiongivescore,  actionposreset,  actionmoverotate,  actionresettimer,  actionshowmessage,  actionteleportto,  actiontogglestate,  actiongivereward,  conditionfurnishaveusers,  conditionstatepos,  conditiontimelessthan,  conditiontimemorethan,  conditiontriggeronfurni,  arrowplate,  preassureplate,  ringplate,  colortile,  colorwheel,  floorswitch1,  floorswitch2,  firegate,  glassfoor,  specialrandom,  specialunseen,  wire,  wireCenter,  wireCorner,  wireSplitter,  wireStandard;
-/*  32:    */   }
-/*  33:    */   
-/*  34:    */   public static InteractorType GetInteractorType(String type)
-/*  35:    */   {
-/*  36:148 */     switch (type)
-/*  37:    */     {
+package cappo.game.roomengine.itemInteractor;
+
+import cappo.engine.player.Connection;
+import cappo.engine.threadpools.RoomTask;
+import cappo.game.roomengine.entity.item.floor.FloorItem;
+import cappo.game.roomengine.entity.item.floor.GenericFloorItem;
+import cappo.game.roomengine.entity.item.wall.GenericWallItem;
+
+public abstract class Interactor
+{
+  public static final Interactor iterWired = new InteractorWiredFurnis();
+  public static final Interactor iterDefault = new InteractorSimple();
+  public static final Interactor iterOutfit = new InteractorOutfit();
+  public static final Interactor iterTeleport = new InteractorTeleport();
+  public static final Interactor iterVendingMachine = new InteractorVendingMachine();
+  public static final Interactor iterOneWayGate = new InteractorOneWayGate();
+  public static final Interactor iterDice = new InteractorDice();
+  public static final Interactor iterHabboWheel = new InteractorHabboWheel();
+  public static final Interactor iterTimer = new InteractorTimer();
+  public static final Interactor iterJukebox = new InteractorTrax();
+  public abstract void OnPlace(RoomTask paramRoomTask, Connection paramConnection, GenericFloorItem paramGenericFloorItem);
+  
+  public abstract void OnPickUp(RoomTask paramRoomTask, Connection paramConnection, GenericFloorItem paramGenericFloorItem);
+  
+  public abstract void OnTriggerFloor(RoomTask paramRoomTask, Connection paramConnection, FloorItem paramFloorItem, int paramInt, boolean paramBoolean);
+  
+  public abstract void OnTriggerWall(RoomTask paramRoomTask, Connection paramConnection, GenericWallItem paramGenericWallItem, int paramInt, boolean paramBoolean);
+  
+  public static enum InteractorType
+  {
+    none,  gift,  postit,  walkeablechange,  roomeffect,  ecotron_box,  bed,  scoreboard,  vendingmachine,  alert,  onewaygate,  loveshuffler,  habbowheel,  dice,  bottle,  teleport,  rentals,  pet,  pool,  roller,  iceskates,  normslaskates,  lowpool,  haloweenpool,  football,  fbgate,  footballcountergreen,  footballcounteryellow,  footballcounterblue,  footballcounterred,  banzaigateblue,  banzaigatered,  banzaigateyellow,  banzaigategreen,  banzaifloor,  banzaiscoreblue,  banzaiscorered,  banzaiscoreyellow,  banzaiscoregreen,  banzaicounter,  banzaitele,  banzaipuck,  banzaipyramid,  freezetimer,  freezeexit,  freezeredcounter,  freezebluecounter,  freezeyellowcounter,  freezegreencounter,  freezeyellowgate,  freezeredgate,  freezegreengate,  freezebluegate,  freezetileblock,  freezetile,  jukebox,  puzzlebox,  triggertimer,  triggerroomenter,  triggergameend,  triggergamestart,  triggerrepeater,  triggeronusersay,  triggerscoreachieved,  triggerstatechanged,  triggerwalkonfurni,  triggerwalkofffurni,  actiongivescore,  actionposreset,  actionmoverotate,  actionresettimer,  actionshowmessage,  actionteleportto,  actiontogglestate,  actiongivereward,  conditionfurnishaveusers,  conditionstatepos,  conditiontimelessthan,  conditiontimemorethan,  conditiontriggeronfurni,  arrowplate,  preassureplate,  ringplate,  colortile,  colorwheel,  floorswitch1,  floorswitch2,  firegate,  glassfoor,  specialrandom,  specialunseen,  wire,  wireCenter,  wireCorner,  wireSplitter,  wireStandard;
+  }
+  
+  public static InteractorType GetInteractorType(String type)
+  {
+    switch (type)
+    {
 /*    :    */     case "triggerwalkonfurni": return InteractorType.triggerwalkonfurni;
 /*    :    */     case "banzaifloor": return InteractorType.banzaifloor;
 /*    :    */     case "actionmoverotate": return InteractorType.actionmoverotate;
@@ -129,14 +129,4 @@
 /*    :    */     default: return InteractorType.none;
 /*    :    */     }
 /*    :    */   }
-/* 532:    */ }
-
-
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
-
- * Qualified Name:     cappo.game.roomengine.itemInteractor.Interactor
-
- * JD-Core Version:    0.7.0.1
-
- */
+}

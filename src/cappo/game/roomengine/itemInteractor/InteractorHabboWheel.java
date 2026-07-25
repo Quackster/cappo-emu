@@ -19,7 +19,3 @@ public class InteractorHabboWheel
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.itemInteractor.InteractorHabboWheel
- * JD-Core Version:    0.7.0.1
- */

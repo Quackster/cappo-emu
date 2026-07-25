@@ -1,31 +1,27 @@
-/*  1:   */ package cappo.game.moderation.tickets;
-/*  2:   */ 
-/*  3:   */ public class HelpTicket
-/*  4:   */ {
-/*  5:   */   public static final short STATUS_OPEN = 1;
-/*  6:   */   public static final short STATUS_PICKED = 2;
-/*  7:   */   public static final short STATUS_CLOSED = 3;
-/*  8:   */   public int id;
-/*  9:   */   public short status;
-/* 10:   */   public short type;
-/* 11:   */   public short category;
-/* 12:   */   public short priority;
-/* 13:   */   public int reporterId;
-/* 14:   */   public String reporterName;
-/* 15:   */   public int reportedId;
-/* 16:   */   public String reportedName;
-/* 17:   */   public int handlerId;
-/* 18:   */   public String handlerName;
-/* 19:   */   public long timeStamp;
-/* 20:   */   public int chatLogId;
-/* 21:   */   public String roomName;
-/* 22:   */   public int roomId;
-/* 23:26 */   public int roomType = 1;
-/* 24:   */   public String text;
-/* 25:   */ }
+package cappo.game.moderation.tickets;
+
+public class HelpTicket
+{
+  public static final short STATUS_OPEN = 1;
+  public static final short STATUS_PICKED = 2;
+  public static final short STATUS_CLOSED = 3;
+  public int id;
+  public short status;
+  public short type;
+  public short category;
+  public short priority;
+  public int reporterId;
+  public String reporterName;
+  public int reportedId;
+  public String reportedName;
+  public int handlerId;
+  public String handlerName;
+  public long timeStamp;
+  public int chatLogId;
+  public String roomName;
+  public int roomId;
+  public int roomType = 1;
+  public String text;
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.moderation.tickets.HelpTicket
- * JD-Core Version:    0.7.0.1
- */

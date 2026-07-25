@@ -10,7 +10,3 @@ public class PlayAgainParser
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.games.snowwar.PlayAgainParser
- * JD-Core Version:    0.7.0.1
- */

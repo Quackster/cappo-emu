@@ -1,63 +1,59 @@
-/*  1:   */ package cappo.protocol.messages.events.room.action;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.network.MessageReader;
-/*  4:   */ import cappo.engine.player.Clients;
-/*  5:   */ import cappo.engine.player.Connection;
-/*  6:   */ import cappo.engine.threadpools.RoomTask;
-/*  7:   */ import cappo.game.player.PlayerData;
-/*  8:   */ import cappo.game.roomengine.RoomData;
-/*  9:   */ import cappo.game.roomengine.entity.live.Avatar;
-/* 10:   */ import cappo.game.roomengine.settings.ModerationPermissions;
-/* 11:   */ import cappo.protocol.messages.IncomingMessageEvent;
-/* 12:   */ 
-/* 13:   */ public class BanUserParser
-/* 14:   */   extends IncomingMessageEvent
-/* 15:   */ {
-/* 16:   */   private static final String BAN_USER_HOUR = "RWUAM_BAN_USER_HOUR";
-/* 17:   */   private static final String BAN_USER_DAY = "RWUAM_BAN_USER_DAY";
-/* 18:   */   private static final String BAN_USER_PERM = "RWUAM_BAN_USER_PERM";
-/* 19:   */   
-/* 20:   */   public void messageReceived(Connection cn)
-/* 21:   */   {
-/* 22:26 */     Avatar avatar = cn.avatar;
-/* 23:27 */     if (avatar == null) {
-/* 24:28 */       return;
-/* 25:   */     }
-/* 26:31 */     RoomTask room = avatar.room;
-/* 27:32 */     RoomData roomData = room.roomData;
-/* 28:34 */     if (roomData.modPermissions.permissionsBan == 1)
-/* 29:   */     {
-/* 30:35 */       if ((avatar.controllerLevel == 1) || 
-/* 31:36 */         (avatar.controllerLevel >= 3)) {}
-/* 32:   */     }
-/* 33:41 */     else if (avatar.controllerLevel < 4) {
-/* 34:42 */       return;
-/* 35:   */     }
-/* 36:46 */     PlayerData client = Clients.getPlayerData(cn.currentPacket.readInt());
-/* 37:47 */     if ((client == null) || (client.connection.avatar == null)) {
-/* 38:48 */       return;
-/* 39:   */     }
-/* 40:51 */     if ((client.staffLevel > 1) && (client.staffLevel >= cn.getPlayerData().staffLevel)) {
-/* 41:52 */       return;
-/* 42:   */     }
-/* 43:55 */     cn.currentPacket.readInt();
-/* 44:   */     
-/* 45:57 */     String type = cn.currentPacket.readString();
-/* 46:58 */     if (type.equals("RWUAM_BAN_USER_HOUR")) {
-/* 47:59 */       room.addBan(client, 3600);
-/* 48:60 */     } else if (type.equals("RWUAM_BAN_USER_DAY")) {
-/* 49:61 */       room.addBan(client, 86400);
-/* 50:62 */     } else if (type.equals("RWUAM_BAN_USER_PERM")) {
-/* 51:63 */       room.addBan(client, 30000000);
-/* 52:   */     }
-/* 53:66 */     if (client.connection.avatar.room == room) {
-/* 54:67 */       room.removeUserFromRoom(client.connection, true, true);
-/* 55:   */     }
-/* 56:   */   }
-/* 57:   */ }
+package cappo.protocol.messages.events.room.action;
+
+import cappo.engine.network.MessageReader;
+import cappo.engine.player.Clients;
+import cappo.engine.player.Connection;
+import cappo.engine.threadpools.RoomTask;
+import cappo.game.player.PlayerData;
+import cappo.game.roomengine.RoomData;
+import cappo.game.roomengine.entity.live.Avatar;
+import cappo.game.roomengine.settings.ModerationPermissions;
+import cappo.protocol.messages.IncomingMessageEvent;
+
+public class BanUserParser
+  extends IncomingMessageEvent
+{
+  private static final String BAN_USER_HOUR = "RWUAM_BAN_USER_HOUR";
+  private static final String BAN_USER_DAY = "RWUAM_BAN_USER_DAY";
+  private static final String BAN_USER_PERM = "RWUAM_BAN_USER_PERM";
+  
+  public void messageReceived(Connection cn)
+  {
+    Avatar avatar = cn.avatar;
+    if (avatar == null) {
+      return;
+    }
+    RoomTask room = avatar.room;
+    RoomData roomData = room.roomData;
+    if (roomData.modPermissions.permissionsBan == 1)
+    {
+      if ((avatar.controllerLevel == 1) || 
+        (avatar.controllerLevel >= 3)) {}
+    }
+    else if (avatar.controllerLevel < 4) {
+      return;
+    }
+    PlayerData client = Clients.getPlayerData(cn.currentPacket.readInt());
+    if ((client == null) || (client.connection.avatar == null)) {
+      return;
+    }
+    if ((client.staffLevel > 1) && (client.staffLevel >= cn.getPlayerData().staffLevel)) {
+      return;
+    }
+    cn.currentPacket.readInt();
+    
+    String type = cn.currentPacket.readString();
+    if (type.equals("RWUAM_BAN_USER_HOUR")) {
+      room.addBan(client, 3600);
+    } else if (type.equals("RWUAM_BAN_USER_DAY")) {
+      room.addBan(client, 86400);
+    } else if (type.equals("RWUAM_BAN_USER_PERM")) {
+      room.addBan(client, 30000000);
+    }
+    if (client.connection.avatar.room == room) {
+      room.removeUserFromRoom(client.connection, true, true);
+    }
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.room.action.BanUserParser
- * JD-Core Version:    0.7.0.1
- */

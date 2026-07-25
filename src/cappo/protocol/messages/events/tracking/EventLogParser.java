@@ -10,7 +10,3 @@ public class EventLogParser
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.tracking.EventLogParser
- * JD-Core Version:    0.7.0.1
- */

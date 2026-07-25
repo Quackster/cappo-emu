@@ -11,7 +11,3 @@ public abstract interface RemoteCommand
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.RemoteCommand
- * JD-Core Version:    0.7.0.1
- */

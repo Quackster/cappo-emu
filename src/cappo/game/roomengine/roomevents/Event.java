@@ -11,7 +11,3 @@ public abstract class Event
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.roomevents.Event
- * JD-Core Version:    0.7.0.1
- */

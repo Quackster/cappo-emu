@@ -1,70 +1,66 @@
-/*  1:   */ package cappo.protocol.messages.events.inventory.furni;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.network.MessageReader;
-/*  4:   */ import cappo.engine.player.Connection;
-/*  5:   */ import cappo.engine.threadpools.RoomTask;
-/*  6:   */ import cappo.game.collections.BaseItem;
-/*  7:   */ import cappo.game.player.inventory.PlayerInventory;
-/*  8:   */ import cappo.game.roomengine.RoomData;
-/*  9:   */ import cappo.game.roomengine.entity.item.extradata.ExtraData1;
-/* 10:   */ import cappo.game.roomengine.entity.item.extradata.MapStuffData;
-/* 11:   */ import cappo.game.roomengine.entity.item.extradata.StringArrayStuffData;
-/* 12:   */ import cappo.game.roomengine.entity.item.wall.WallItem;
-/* 13:   */ import cappo.game.roomengine.entity.live.Avatar;
-import cappo.game.roomengine.itemInteractor.Interactor;
-/* 14:   */ import cappo.game.roomengine.itemInteractor.Interactor.InteractorType;
-/* 15:   */ import cappo.protocol.messages.IncomingMessageEvent;
-/* 16:   */ import cappo.protocol.messages.composers.room.engine.RoomPropertyComposer;
+package cappo.protocol.messages.events.inventory.furni;
 
-/* 17:   */ import java.util.List;
-/* 18:   */ import java.util.Map;
-/* 19:   */ 
-/* 20:   */ public class RequestRoomPropertySetParser
-/* 21:   */   extends IncomingMessageEvent
-/* 22:   */ {
-/* 23:   */   public void messageReceived(Connection Main)
-/* 24:   */   {
-/* 25:25 */     Avatar avatar = Main.avatar;
-/* 26:26 */     if ((avatar == null) || ((avatar.controllerLevel != 1) && 
-/* 27:27 */       (avatar.controllerLevel < 4))) {
-/* 28:28 */       return;
-/* 29:   */     }
-/* 30:31 */     WallItem wallItem = Main.inventory.getItem(Main.currentPacket.readInt());
-/* 31:32 */     if (wallItem == null) {
-/* 32:33 */       return;
-/* 33:   */     }
-/* 34:36 */     if (wallItem.baseItem.interactorType != Interactor.InteractorType.roomeffect) {
-/* 35:37 */       return;
-/* 36:   */     }
-/* 37:40 */     Main.inventoryRemoveItem(wallItem.itemId, true);
-/* 38:   */     
-/* 39:42 */     RoomTask room = avatar.room;
-/* 40:44 */     if (wallItem.baseItem.itemCategory == 2)
-/* 41:   */     {
-/* 42:45 */       MapStuffData data = (MapStuffData)wallItem.extraData;
-/* 43:46 */       room.roomData.Wallpaper = ((String)data.extraData.get("state"));
-/* 44:47 */       if (room.roomData.Wallpaper == null) {
-/* 45:48 */         room.roomData.Wallpaper = "0.0";
-/* 46:   */       }
-/* 47:50 */       room.sendMessage(RoomPropertyComposer.compose("wallpaper", room.roomData.Wallpaper));
-/* 48:   */     }
-/* 49:51 */     else if (wallItem.baseItem.itemCategory == 4)
-/* 50:   */     {
-/* 51:52 */       ExtraData1 data = (ExtraData1)wallItem.extraData;
-/* 52:53 */       room.roomData.Landscape = data.value;
-/* 53:54 */       room.sendMessage(RoomPropertyComposer.compose("landscape", room.roomData.Landscape));
-/* 54:   */     }
-/* 55:55 */     else if (wallItem.baseItem.itemCategory == 3)
-/* 56:   */     {
-/* 57:56 */       StringArrayStuffData data = (StringArrayStuffData)wallItem.extraData;
-/* 58:57 */       room.roomData.Floor = ((String)data.extraData.get(0));
-/* 59:58 */       room.sendMessage(RoomPropertyComposer.compose("floor", room.roomData.Floor));
-/* 60:   */     }
-/* 61:   */   }
-/* 62:   */ }
+import cappo.engine.network.MessageReader;
+import cappo.engine.player.Connection;
+import cappo.engine.threadpools.RoomTask;
+import cappo.game.collections.BaseItem;
+import cappo.game.player.inventory.PlayerInventory;
+import cappo.game.roomengine.RoomData;
+import cappo.game.roomengine.entity.item.extradata.ExtraData1;
+import cappo.game.roomengine.entity.item.extradata.MapStuffData;
+import cappo.game.roomengine.entity.item.extradata.StringArrayStuffData;
+import cappo.game.roomengine.entity.item.wall.WallItem;
+import cappo.game.roomengine.entity.live.Avatar;
+import cappo.game.roomengine.itemInteractor.Interactor;
+import cappo.game.roomengine.itemInteractor.Interactor.InteractorType;
+import cappo.protocol.messages.IncomingMessageEvent;
+import cappo.protocol.messages.composers.room.engine.RoomPropertyComposer;
+
+import java.util.List;
+import java.util.Map;
+
+public class RequestRoomPropertySetParser
+  extends IncomingMessageEvent
+{
+  public void messageReceived(Connection Main)
+  {
+    Avatar avatar = Main.avatar;
+    if ((avatar == null) || ((avatar.controllerLevel != 1) && 
+      (avatar.controllerLevel < 4))) {
+      return;
+    }
+    WallItem wallItem = Main.inventory.getItem(Main.currentPacket.readInt());
+    if (wallItem == null) {
+      return;
+    }
+    if (wallItem.baseItem.interactorType != Interactor.InteractorType.roomeffect) {
+      return;
+    }
+    Main.inventoryRemoveItem(wallItem.itemId, true);
+    
+    RoomTask room = avatar.room;
+    if (wallItem.baseItem.itemCategory == 2)
+    {
+      MapStuffData data = (MapStuffData)wallItem.extraData;
+      room.roomData.Wallpaper = ((String)data.extraData.get("state"));
+      if (room.roomData.Wallpaper == null) {
+        room.roomData.Wallpaper = "0.0";
+      }
+      room.sendMessage(RoomPropertyComposer.compose("wallpaper", room.roomData.Wallpaper));
+    }
+    else if (wallItem.baseItem.itemCategory == 4)
+    {
+      ExtraData1 data = (ExtraData1)wallItem.extraData;
+      room.roomData.Landscape = data.value;
+      room.sendMessage(RoomPropertyComposer.compose("landscape", room.roomData.Landscape));
+    }
+    else if (wallItem.baseItem.itemCategory == 3)
+    {
+      StringArrayStuffData data = (StringArrayStuffData)wallItem.extraData;
+      room.roomData.Floor = ((String)data.extraData.get(0));
+      room.sendMessage(RoomPropertyComposer.compose("floor", room.roomData.Floor));
+    }
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.inventory.furni.RequestRoomPropertySetParser
- * JD-Core Version:    0.7.0.1
- */

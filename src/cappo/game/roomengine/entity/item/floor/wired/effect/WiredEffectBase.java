@@ -12,7 +12,3 @@ public abstract class WiredEffectBase
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.entity.item.floor.wired.effect.WiredEffectBase
- * JD-Core Version:    0.7.0.1
- */

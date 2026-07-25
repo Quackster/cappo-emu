@@ -10,7 +10,3 @@ public class GetLandingView6Parser
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.landing.GetLandingView6Parser
- * JD-Core Version:    0.7.0.1
- */

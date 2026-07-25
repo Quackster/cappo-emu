@@ -1,25 +1,21 @@
-/*  1:   */ package cappo.protocol.messages.composers.inventory.avatareffect;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.network.MessageWriter;
-/*  4:   */ import cappo.protocol.messages.Composer;
-/*  5:   */ 
-/*  6:   */ public class EffectEnabledComposer
-/*  7:   */ {
-/*  8:   */   public static int HEADER;
-/*  9:   */   
-/* 10:   */   public static final MessageWriter compose(int EffectId, int TotalDuration)
-/* 11:   */   {
-/* 12:16 */     MessageWriter ClientMessage = new MessageWriter();
-/* 13:17 */     Composer.initPacket(HEADER, ClientMessage);
-/* 14:18 */     Composer.add(Integer.valueOf(EffectId), ClientMessage);
-/* 15:19 */     Composer.add(Integer.valueOf(TotalDuration), ClientMessage);
-/* 16:20 */     Composer.endPacket(ClientMessage);
-/* 17:21 */     return ClientMessage;
-/* 18:   */   }
-/* 19:   */ }
+package cappo.protocol.messages.composers.inventory.avatareffect;
+
+import cappo.engine.network.MessageWriter;
+import cappo.protocol.messages.Composer;
+
+public class EffectEnabledComposer
+{
+  public static int HEADER;
+  
+  public static final MessageWriter compose(int EffectId, int TotalDuration)
+  {
+    MessageWriter ClientMessage = new MessageWriter();
+    Composer.initPacket(HEADER, ClientMessage);
+    Composer.add(Integer.valueOf(EffectId), ClientMessage);
+    Composer.add(Integer.valueOf(TotalDuration), ClientMessage);
+    Composer.endPacket(ClientMessage);
+    return ClientMessage;
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.inventory.avatareffect.EffectEnabledComposer
- * JD-Core Version:    0.7.0.1
- */

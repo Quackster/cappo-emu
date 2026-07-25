@@ -21,7 +21,3 @@ public final class ServerProps
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.ServerProps
- * JD-Core Version:    0.7.0.1
- */

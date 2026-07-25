@@ -56,7 +56,3 @@ public final class ShutdownInstance_Stub
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.ShutdownInstance_Stub
- * JD-Core Version:    0.7.0.1
- */

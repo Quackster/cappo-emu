@@ -1,40 +1,36 @@
-/*  1:   */ package cappo.protocol.messages.events.room.session;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.network.MessageReader;
-/*  4:   */ import cappo.engine.player.Connection;
-/*  5:   */ import cappo.engine.threadpools.RoomTask;
-/*  6:   */ import cappo.game.roomengine.RoomData;
-/*  7:   */ import cappo.game.roomengine.RoomManager;
-/*  8:   */ import cappo.game.roomengine.entity.live.Avatar;
-/*  9:   */ import cappo.protocol.messages.IncomingMessageEvent;
-/* 10:   */ 
-/* 11:   */ public class GoToFlatParser
-/* 12:   */   extends IncomingMessageEvent
-/* 13:   */ {
-/* 14:   */   public void messageReceived(Connection cn)
-/* 15:   */   {
-/* 16:21 */     RoomData roomData = RoomManager.getRoom(cn.currentPacket.readInt());
-/* 17:22 */     if (roomData == null) {
-/* 18:23 */       return;
-/* 19:   */     }
-/* 20:26 */     RoomTask room = roomData.room;
-/* 21:27 */     if (room == null) {
-/* 22:28 */       return;
-/* 23:   */     }
-/* 24:34 */     Avatar avatar = cn.avatar;
-/* 25:35 */     if (avatar != null)
-/* 26:   */     {
-/* 27:36 */       RoomTask oldRoom = avatar.room;
-/* 28:37 */       if (oldRoom != null) {
-/* 29:38 */         oldRoom.removeUserFromRoom(cn, false, false);
-/* 30:   */       }
-/* 31:   */     }
-/* 32:43 */     room.startLoadingRoom(cn);
-/* 33:   */   }
-/* 34:   */ }
+package cappo.protocol.messages.events.room.session;
+
+import cappo.engine.network.MessageReader;
+import cappo.engine.player.Connection;
+import cappo.engine.threadpools.RoomTask;
+import cappo.game.roomengine.RoomData;
+import cappo.game.roomengine.RoomManager;
+import cappo.game.roomengine.entity.live.Avatar;
+import cappo.protocol.messages.IncomingMessageEvent;
+
+public class GoToFlatParser
+  extends IncomingMessageEvent
+{
+  public void messageReceived(Connection cn)
+  {
+    RoomData roomData = RoomManager.getRoom(cn.currentPacket.readInt());
+    if (roomData == null) {
+      return;
+    }
+    RoomTask room = roomData.room;
+    if (room == null) {
+      return;
+    }
+    Avatar avatar = cn.avatar;
+    if (avatar != null)
+    {
+      RoomTask oldRoom = avatar.room;
+      if (oldRoom != null) {
+        oldRoom.removeUserFromRoom(cn, false, false);
+      }
+    }
+    room.startLoadingRoom(cn);
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.room.session.GoToFlatParser
- * JD-Core Version:    0.7.0.1
- */

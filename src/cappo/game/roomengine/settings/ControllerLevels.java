@@ -1,43 +1,39 @@
-/*  1:   */ package cappo.game.roomengine.settings;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.threadpools.RoomTask;
-/*  4:   */ import cappo.game.player.PlayerData;
-/*  5:   */ import cappo.game.roomengine.RoomData;
-/*  6:   */ import java.util.Map;
-/*  7:   */ 
-/*  8:   */ public class ControllerLevels
-/*  9:   */ {
-/* 10:   */   public static final int LEVEL_NONE = 0;
-/* 11:   */   public static final int LEVEL_RIGHTS = 1;
-/* 12:   */   public static final int LEVEL_GROUP_MEMBER = 2;
-/* 13:   */   public static final int LEVEL_GROUP_ADMIN = 3;
-/* 14:   */   public static final int LEVEL_ROOM_OWNER = 4;
-/* 15:   */   public static final int LEVEL_STAFF = 5;
-/* 16:   */   
-/* 17:   */   public static int getLevel(PlayerData User, RoomData roomData, RoomTask room)
-/* 18:   */   {
-/* 19:22 */     if (User.allowRoomControl()) {
-/* 20:23 */       return 5;
-/* 21:   */     }
-/* 22:26 */     if (roomData.roomOwnerId > 0)
-/* 23:   */     {
-/* 24:27 */       if (User.userId == roomData.roomOwnerId) {
-/* 25:28 */         return 4;
-/* 26:   */       }
-/* 27:   */     }
-/* 28:32 */     else if (User.userName.equals(roomData.roomOwnerName)) {
-/* 29:33 */       return 4;
-/* 30:   */     }
-/* 31:37 */     if ((room != null) && 
-/* 32:38 */       (room.usersWithRights.containsKey(Integer.valueOf(User.userId)))) {
-/* 33:39 */       return 1;
-/* 34:   */     }
-/* 35:45 */     return 0;
-/* 36:   */   }
-/* 37:   */ }
+package cappo.game.roomengine.settings;
+
+import cappo.engine.threadpools.RoomTask;
+import cappo.game.player.PlayerData;
+import cappo.game.roomengine.RoomData;
+import java.util.Map;
+
+public class ControllerLevels
+{
+  public static final int LEVEL_NONE = 0;
+  public static final int LEVEL_RIGHTS = 1;
+  public static final int LEVEL_GROUP_MEMBER = 2;
+  public static final int LEVEL_GROUP_ADMIN = 3;
+  public static final int LEVEL_ROOM_OWNER = 4;
+  public static final int LEVEL_STAFF = 5;
+  
+  public static int getLevel(PlayerData User, RoomData roomData, RoomTask room)
+  {
+    if (User.allowRoomControl()) {
+      return 5;
+    }
+    if (roomData.roomOwnerId > 0)
+    {
+      if (User.userId == roomData.roomOwnerId) {
+        return 4;
+      }
+    }
+    else if (User.userName.equals(roomData.roomOwnerName)) {
+      return 4;
+    }
+    if ((room != null) && 
+      (room.usersWithRights.containsKey(Integer.valueOf(User.userId)))) {
+      return 1;
+    }
+    return 0;
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomengine.settings.ControllerLevels
- * JD-Core Version:    0.7.0.1
- */

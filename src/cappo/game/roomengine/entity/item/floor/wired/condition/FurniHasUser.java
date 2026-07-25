@@ -1,54 +1,44 @@
-/*  1:   */ package cappo.game.roomengine.entity.item.floor.wired.condition;
+package cappo.game.roomengine.entity.item.floor.wired.condition;
 import cappo.game.roomengine.entity.item.floor.RoomFloorItemData;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.player.Connection;
-/*  4:   */ import cappo.engine.threadpools.RoomTask;
-/*  5:   */ import cappo.game.roomengine.entity.item.floor.FloorItem;
-/*  6:   */ import cappo.game.roomengine.entity.item.floor.RoomFloorItemData.AffectedTile;
-/*  7:   */ import java.util.List;
-/*  8:   */ import java.util.Map;
-/*  9:   */ 
-/* 10:   */ public class FurniHasUser
-/* 11:   */   extends WiredConditionBase
-/* 12:   */ {
-/* 13:   */   public int getCode()
-/* 14:   */   {
-/* 15:18 */     return 2;
-/* 16:   */   }
-/* 17:   */   
-/* 18:   */   public boolean needUser()
-/* 19:   */   {
-/* 20:23 */     return false;
-/* 21:   */   }
-/* 22:   */   
-/* 23:   */   public boolean checkCondition(Connection invoker)
-/* 24:   */   {
-/* 25:28 */     for (FloorItem floorItem : this.items.values())
-/* 26:   */     {
-/* 27:29 */       boolean haveUser = false;
-/* 28:   */       
-/* 29:31 */       List<RoomFloorItemData.AffectedTile> PointList = floorItem.getAffectedTiles();
-/* 30:32 */       for (RoomFloorItemData.AffectedTile Tile : PointList) {
-/* 31:33 */         if (getRoom().squareHasUsers(Tile.xy))
-/* 32:   */         {
-/* 33:34 */           haveUser = true;
-/* 34:35 */           break;
-/* 35:   */         }
-/* 36:   */       }
-/* 37:39 */       if (!haveUser) {
-/* 38:40 */         return false;
-/* 39:   */       }
-/* 40:   */     }
-/* 41:44 */     return true;
-/* 42:   */   }
-/* 43:   */ }
 
+import cappo.engine.player.Connection;
+import cappo.engine.threadpools.RoomTask;
+import cappo.game.roomengine.entity.item.floor.FloorItem;
+import cappo.game.roomengine.entity.item.floor.RoomFloorItemData.AffectedTile;
+import java.util.List;
+import java.util.Map;
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
-
- * Qualified Name:     cappo.game.roomengine.entity.item.floor.wired.condition.FurniHasUser
-
- * JD-Core Version:    0.7.0.1
-
- */
+public class FurniHasUser
+  extends WiredConditionBase
+{
+  public int getCode()
+  {
+    return 2;
+  }
+  
+  public boolean needUser()
+  {
+    return false;
+  }
+  
+  public boolean checkCondition(Connection invoker)
+  {
+    for (FloorItem floorItem : this.items.values())
+    {
+      boolean haveUser = false;
+      
+      List<RoomFloorItemData.AffectedTile> PointList = floorItem.getAffectedTiles();
+      for (RoomFloorItemData.AffectedTile Tile : PointList) {
+        if (getRoom().squareHasUsers(Tile.xy))
+        {
+          haveUser = true;
+          break;
+        }
+      }
+      if (!haveUser) {
+        return false;
+      }
+    }
+    return true;
+  }
+}

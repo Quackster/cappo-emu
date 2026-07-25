@@ -1,25 +1,21 @@
-/*  1:   */ package cappo.protocol.messages.composers.landing;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.network.MessageWriter;
-/*  4:   */ import cappo.protocol.messages.Composer;
-/*  5:   */ 
-/*  6:   */ public class UpdateLandingComposer
-/*  7:   */ {
-/*  8:   */   public static int HEADER;
-/*  9:   */   
-/* 10:   */   public static final MessageWriter compose(String data, String code)
-/* 11:   */   {
-/* 12:16 */     MessageWriter ClientMessage = new MessageWriter();
-/* 13:17 */     Composer.initPacket(HEADER, ClientMessage);
-/* 14:18 */     Composer.add(data, ClientMessage);
-/* 15:19 */     Composer.add(code, ClientMessage);
-/* 16:20 */     Composer.endPacket(ClientMessage);
-/* 17:21 */     return ClientMessage;
-/* 18:   */   }
-/* 19:   */ }
+package cappo.protocol.messages.composers.landing;
+
+import cappo.engine.network.MessageWriter;
+import cappo.protocol.messages.Composer;
+
+public class UpdateLandingComposer
+{
+  public static int HEADER;
+  
+  public static final MessageWriter compose(String data, String code)
+  {
+    MessageWriter ClientMessage = new MessageWriter();
+    Composer.initPacket(HEADER, ClientMessage);
+    Composer.add(data, ClientMessage);
+    Composer.add(code, ClientMessage);
+    Composer.endPacket(ClientMessage);
+    return ClientMessage;
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.landing.UpdateLandingComposer
- * JD-Core Version:    0.7.0.1
- */

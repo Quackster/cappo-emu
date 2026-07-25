@@ -1,22 +1,18 @@
-/*  1:   */ package cappo.protocol.messages.events.handshake;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.network.MessageReader;
-/*  4:   */ import cappo.engine.player.Connection;
-/*  5:   */ import cappo.protocol.messages.IncomingMessageEvent;
-/*  6:   */ 
-/*  7:   */ public class VersionCheckParser
-/*  8:   */   extends IncomingMessageEvent
-/*  9:   */ {
-/* 10:   */   public void messageReceived(Connection Main)
-/* 11:   */   {
-/* 12:15 */     Main.currentPacket.readInt();
-/* 13:16 */     Main.currentPacket.readString();
-/* 14:17 */     Main.currentPacket.readString();
-/* 15:   */   }
-/* 16:   */ }
+package cappo.protocol.messages.events.handshake;
+
+import cappo.engine.network.MessageReader;
+import cappo.engine.player.Connection;
+import cappo.protocol.messages.IncomingMessageEvent;
+
+public class VersionCheckParser
+  extends IncomingMessageEvent
+{
+  public void messageReceived(Connection Main)
+  {
+    Main.currentPacket.readInt();
+    Main.currentPacket.readString();
+    Main.currentPacket.readString();
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.events.handshake.VersionCheckParser
- * JD-Core Version:    0.7.0.1
- */

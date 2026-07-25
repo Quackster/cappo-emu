@@ -1,27 +1,23 @@
-/*  1:   */ package cappo.protocol.messages.composers.games.snowwar;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.network.MessageWriter;
-/*  4:   */ import cappo.game.games.snowwar.RoomQueue;
-/*  5:   */ import cappo.protocol.messages.Composer;
-/*  6:   */ import cappo.protocol.messages.composers.serializers.SerializeGame2;
-/*  7:   */ import java.util.Map;
-/*  8:   */ 
-/*  9:   */ public class GameCreatedComposer
-/* 10:   */ {
-/* 11:   */   public static int HEADER;
-/* 12:   */   
-/* 13:   */   public static final MessageWriter compose(RoomQueue queueRoom)
-/* 14:   */   {
-/* 15:18 */     MessageWriter ClientMessage = new MessageWriter(100 + queueRoom.players.size() * 200);
-/* 16:19 */     Composer.initPacket(HEADER, ClientMessage);
-/* 17:20 */     SerializeGame2.parse(ClientMessage, queueRoom);
-/* 18:21 */     Composer.endPacket(ClientMessage);
-/* 19:22 */     return ClientMessage;
-/* 20:   */   }
-/* 21:   */ }
+package cappo.protocol.messages.composers.games.snowwar;
+
+import cappo.engine.network.MessageWriter;
+import cappo.game.games.snowwar.RoomQueue;
+import cappo.protocol.messages.Composer;
+import cappo.protocol.messages.composers.serializers.SerializeGame2;
+import java.util.Map;
+
+public class GameCreatedComposer
+{
+  public static int HEADER;
+  
+  public static final MessageWriter compose(RoomQueue queueRoom)
+  {
+    MessageWriter ClientMessage = new MessageWriter(100 + queueRoom.players.size() * 200);
+    Composer.initPacket(HEADER, ClientMessage);
+    SerializeGame2.parse(ClientMessage, queueRoom);
+    Composer.endPacket(ClientMessage);
+    return ClientMessage;
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.games.snowwar.GameCreatedComposer
- * JD-Core Version:    0.7.0.1
- */

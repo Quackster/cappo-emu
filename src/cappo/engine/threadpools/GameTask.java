@@ -9,7 +9,3 @@ public abstract class GameTask
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.threadpools.GameTask
- * JD-Core Version:    0.7.0.1
- */

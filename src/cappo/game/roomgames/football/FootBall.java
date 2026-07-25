@@ -8,7 +8,3 @@ public class FootBall
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.game.roomgames.football.FootBall
- * JD-Core Version:    0.7.0.1
- */

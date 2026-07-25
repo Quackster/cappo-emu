@@ -1,27 +1,23 @@
-/*  1:   */ package cappo.protocol.messages.composers.inventory.furni;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.network.MessageWriter;
-/*  4:   */ import cappo.protocol.messages.Composer;
-/*  5:   */ 
-/*  6:   */ public class FurniListUpdateComposer
-/*  7:   */ {
-/*  8:   */   public static int HEADER;
-/*  9:   */   private static MessageWriter ClientMessage;
-/* 10:   */   
-/* 11:   */   public static final MessageWriter compose()
-/* 12:   */   {
-/* 13:18 */     if (ClientMessage == null)
-/* 14:   */     {
-/* 15:19 */       ClientMessage = new MessageWriter(6);
-/* 16:20 */       Composer.initPacket(HEADER, ClientMessage);
-/* 17:21 */       Composer.endPacket(ClientMessage);
-/* 18:   */     }
-/* 19:23 */     return ClientMessage;
-/* 20:   */   }
-/* 21:   */ }
+package cappo.protocol.messages.composers.inventory.furni;
+
+import cappo.engine.network.MessageWriter;
+import cappo.protocol.messages.Composer;
+
+public class FurniListUpdateComposer
+{
+  public static int HEADER;
+  private static MessageWriter ClientMessage;
+  
+  public static final MessageWriter compose()
+  {
+    if (ClientMessage == null)
+    {
+      ClientMessage = new MessageWriter(6);
+      Composer.initPacket(HEADER, ClientMessage);
+      Composer.endPacket(ClientMessage);
+    }
+    return ClientMessage;
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.inventory.furni.FurniListUpdateComposer
- * JD-Core Version:    0.7.0.1
- */

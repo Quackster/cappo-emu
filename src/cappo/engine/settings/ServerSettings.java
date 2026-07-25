@@ -6,7 +6,3 @@ public class ServerSettings
 }
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.settings.ServerSettings
- * JD-Core Version:    0.7.0.1
- */

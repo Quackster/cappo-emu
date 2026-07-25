@@ -1,25 +1,21 @@
-/*  1:   */ package cappo.protocol.messages.composers.room.engine;
-/*  2:   */ 
-/*  3:   */ import cappo.engine.network.MessageWriter;
-/*  4:   */ import cappo.protocol.messages.Composer;
-/*  5:   */ 
-/*  6:   */ public class RoomPropertyComposer
-/*  7:   */ {
-/*  8:   */   public static int HEADER;
-/*  9:   */   
-/* 10:   */   public static final MessageWriter compose(String Type, String Value)
-/* 11:   */   {
-/* 12:16 */     MessageWriter ClientMessage = new MessageWriter();
-/* 13:17 */     Composer.initPacket(HEADER, ClientMessage);
-/* 14:18 */     Composer.add(Type, ClientMessage);
-/* 15:19 */     Composer.add(Value, ClientMessage);
-/* 16:20 */     Composer.endPacket(ClientMessage);
-/* 17:21 */     return ClientMessage;
-/* 18:   */   }
-/* 19:   */ }
+package cappo.protocol.messages.composers.room.engine;
+
+import cappo.engine.network.MessageWriter;
+import cappo.protocol.messages.Composer;
+
+public class RoomPropertyComposer
+{
+  public static int HEADER;
+  
+  public static final MessageWriter compose(String Type, String Value)
+  {
+    MessageWriter ClientMessage = new MessageWriter();
+    Composer.initPacket(HEADER, ClientMessage);
+    Composer.add(Type, ClientMessage);
+    Composer.add(Value, ClientMessage);
+    Composer.endPacket(ClientMessage);
+    return ClientMessage;
+  }
+}
 
 
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.protocol.messages.composers.room.engine.RoomPropertyComposer
- * JD-Core Version:    0.7.0.1
- */
