@@ -27,8 +27,11 @@ public class OpCodesManager
     throws Exception
   {
     getObjects();
-    OpCodes.registerComposers();
-    OpCodes.registerParsers();
+    // OldOpCodes' static initializer assigns every composer HEADER and
+    // registers every parser callback (IncomingMessageEvent.callBacks[])
+    // directly, using the RELEASE63-20130703 opcode table. It replaces the
+    // per-class OpCodes.registerComposers()/registerParsers() calls.
+    Class.forName("cappo.protocol.messages.OldOpCodes");
     checkComposerOverrides();
     checkParserOverrides();
   }

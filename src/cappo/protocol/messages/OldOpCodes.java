@@ -545,12 +545,12 @@ public class OldOpCodes
     IncomingMessageEvent.callBacks[15] = new GetWardrobeParser();
     IncomingMessageEvent.callBacks[1267] = new SaveWardrobeOutfitParser();
     
-    IncomingMessageEvent.callBacks[''] = new GetGiftWrappingConfigurationParser();
+    IncomingMessageEvent.callBacks[142] = new GetGiftWrappingConfigurationParser();
     IncomingMessageEvent.callBacks[1416] = new GetHabboClubExtendOfferParser();
     IncomingMessageEvent.callBacks[2984] = new GetSellablePetBreedsParser();
     
     IncomingMessageEvent.callBacks[1512] = new GetIsOfferGiftableParser();
-    IncomingMessageEvent.callBacks['º'] = new GetClubOffersParser();
+    IncomingMessageEvent.callBacks[186] = new GetClubOffersParser();
     IncomingMessageEvent.callBacks[299] = new GetCatalogIndexParser();
     
     IncomingMessageEvent.callBacks[289] = new PurchaseFromCatalogParser();
@@ -577,7 +577,7 @@ public class OldOpCodes
     
     IncomingMessageEvent.callBacks[569] = new JoinPlayerQueueParser();
     IncomingMessageEvent.callBacks[778] = new GetStatusGameParser();
-    IncomingMessageEvent.callBacks[''] = new GetGameListParser();
+    IncomingMessageEvent.callBacks[135] = new GetGameListParser();
     IncomingMessageEvent.callBacks[3146] = new GetGameAchievementsParser();
     
     IncomingMessageEvent.callBacks[3001] = new CheckGameDirectoryStatusParser();
@@ -658,12 +658,12 @@ public class OldOpCodes
     IncomingMessageEvent.callBacks[1658] = new ModerateRoomParser();
     IncomingMessageEvent.callBacks[945] = new ModeratorRoomActionParser();
     IncomingMessageEvent.callBacks[1478] = new PickIssuesParser();
-    IncomingMessageEvent.callBacks[''] = new ReleaseIssuesParser();
+    IncomingMessageEvent.callBacks[140] = new ReleaseIssuesParser();
     IncomingMessageEvent.callBacks[2663] = new CloseIssuesParser();
     
     IncomingMessageEvent.callBacks[915] = new AddFavouriteRoomParser();
     IncomingMessageEvent.callBacks[3019] = new DeleteFavouriteRoomParser();
-    IncomingMessageEvent.callBacks[''] = new CreateFlatParser();
+    IncomingMessageEvent.callBacks[133] = new CreateFlatParser();
     IncomingMessageEvent.callBacks[3757] = new RateFlatParser();
     
 
@@ -708,10 +708,10 @@ public class OldOpCodes
     IncomingMessageEvent.callBacks[2015] = new RemoveRightsParser();
     IncomingMessageEvent.callBacks[1573] = new RemoveAllRightsParser();
     IncomingMessageEvent.callBacks[78] = new LetUserInParser();
-    IncomingMessageEvent.callBacks['Ð'] = new DropCarryObjectParser();
+    IncomingMessageEvent.callBacks[208] = new DropCarryObjectParser();
     IncomingMessageEvent.callBacks[3766] = new ShareCarryObjectParser();
     
-    IncomingMessageEvent.callBacks[''] = new LookToParser();
+    IncomingMessageEvent.callBacks[130] = new LookToParser();
     IncomingMessageEvent.callBacks[2272] = new DanceParser();
     IncomingMessageEvent.callBacks[2940] = new SignParser();
     IncomingMessageEvent.callBacks[2387] = new ChangePostureParser();
@@ -729,7 +729,7 @@ public class OldOpCodes
     IncomingMessageEvent.callBacks[683] = new MoveAvatarParser();
     IncomingMessageEvent.callBacks[3691] = new PlaceObjectParser();
     IncomingMessageEvent.callBacks[2061] = new MoveWallItemParser();
-    IncomingMessageEvent.callBacks['ë'] = new GetRoomEntryDataParser();
+    IncomingMessageEvent.callBacks[235] = new GetRoomEntryDataParser();
     IncomingMessageEvent.callBacks[1232] = new UseFurnitureParser();
     IncomingMessageEvent.callBacks[3353] = new UseWallItemParser();
     IncomingMessageEvent.callBacks[2051] = new SetClothingChangeDataParser();
