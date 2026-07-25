@@ -32,10 +32,42 @@ public class OpCodesManager
     // directly, using the RELEASE63-20130703 opcode table. It replaces the
     // per-class OpCodes.registerComposers()/registerParsers() calls.
     Class.forName("cappo.protocol.messages.OldOpCodes");
+    logLoadedHeaders();
     checkComposerOverrides();
     checkParserOverrides();
   }
-  
+
+  // OldOpCodes sets composer HEADERs and parser callBacks directly, so it does
+  // not flow through setComposerId()/setParserId() (which logged every id).
+  // Re-log every loaded header here, sourced from the state OldOpCodes just
+  // populated, so the boot output still shows the full opcode table.
+  private static void logLoadedHeaders()
+    throws Exception
+  {
+    String evPrefix = "cappo.protocol.messages.events.";
+    for (Map.Entry<String, Class<?>> e : composersMap.entrySet())
+    {
+      try
+      {
+        int h = e.getValue().getField("HEADER").getInt(null);
+        if (h != 0) {
+          Log.printLog("setComposerId:" + e.getKey() + ":" + h);
+        }
+      }
+      catch (NoSuchFieldException localNoSuchFieldException) {}
+    }
+    for (int i = 0; i < IncomingMessageEvent.callBacks.length; i++)
+    {
+      IncomingMessageEvent ev = IncomingMessageEvent.callBacks[i];
+      if (ev != null)
+      {
+        String name = ev.getClass().getName();
+        String key = name.startsWith(evPrefix) ? name.substring(evPrefix.length()) : name;
+        Log.printLog("setParserId:" + key + ":" + i);
+      }
+    }
+  }
+
   public static void checkComposerOverrides()
     throws Exception
   {
