@@ -17,7 +17,6 @@ public class SerializeFloorItem
     Composer.add(Integer.valueOf(Item.getY()), ClientMessage);
     Composer.add(Integer.valueOf(Item.getDir().getRot()), ClientMessage);
     Composer.add(Float.toString(Item.getZ()).replace(",", "."), ClientMessage);
-    Composer.add(Float.toString(Item.baseItem.Height).replace(",", "."), ClientMessage);
     Composer.add(Integer.valueOf(Item.getExtraParam()), ClientMessage);
     SerializeItemData.parse(ClientMessage, Item.baseItem, Item);
     Composer.add(Integer.valueOf(-1), ClientMessage);
@@ -26,4 +25,4 @@ public class SerializeFloorItem
   }
 }
 
-
+
