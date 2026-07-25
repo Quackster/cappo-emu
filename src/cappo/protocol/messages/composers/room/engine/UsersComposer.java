@@ -44,7 +44,6 @@ public class UsersComposer
       Composer.add("GroupName", ClientMessage);
       Composer.add("", ClientMessage);
       Composer.add(Integer.valueOf(playerData.AchievementsScore), ClientMessage);
-      Composer.add(Boolean.valueOf(false), ClientMessage);
       i++;
     }
     for (PetEntity User : petList)
@@ -129,11 +128,10 @@ public class UsersComposer
     Composer.add("GroupName", ClientMessage);
     Composer.add("", ClientMessage);
     Composer.add(Integer.valueOf(playerData.AchievementsScore), ClientMessage);
-    Composer.add(Boolean.valueOf(false), ClientMessage);
     Composer.endPacket(ClientMessage);
     return ClientMessage;
   }
-  
+
   public static final MessageWriter compose(PetEntity User)
   {
     MessageWriter ClientMessage = new MessageWriter(400);
@@ -201,4 +199,4 @@ public class UsersComposer
   }
 }
 
-
+
