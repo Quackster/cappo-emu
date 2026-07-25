@@ -5,41 +5,44 @@ import cappo.engine.threadpools.RoomTask;
 import cappo.game.roomengine.Square;
 import cappo.game.roomengine.gamemap.GameMapBase;
 import cappo.protocol.messages.Composer;
-import java.util.Map;
 
 public class HeightMapComposer
 {
   public static int HEADER;
-  
+
   public static final MessageWriter compose(RoomTask room)
   {
     GameMapBase model = room.model;
-    
+
     int len = model.widthX * model.heightY;
-    MessageWriter writer = new MessageWriter(14 + len * 2);
-    Composer.initPacket(HEADER, writer);
-    Composer.writeInt32(model.widthX, writer);
-    Composer.writeInt32(len, writer);
+    StringBuilder sb = new StringBuilder(len + model.heightY);
     for (int xy = 0; xy < len; xy++)
     {
+      if ((xy > 0) && (xy % model.widthX == 0)) {
+        sb.append('\r');
+      }
       Square square = model.getSquare(xy);
       if (square == null)
       {
-        Composer.writeInt16(16384, writer);
+        sb.append('x');
       }
       else
       {
-        Float newZ = (Float)room.squareAbsoluteHeight.get(Integer.valueOf(xy));
-        if (newZ == null) {
-          Composer.writeInt16(16384, writer);
-        } else {
-          Composer.writeInt16(newZ.intValue() * 256, writer);
-        }
+        sb.append(heightChar(square.height));
       }
     }
+    MessageWriter writer = new MessageWriter();
+    Composer.initPacket(HEADER, writer);
+    Composer.add(sb.toString(), writer);
     Composer.endPacket(writer);
     return writer;
   }
-}
 
-
+  private static char heightChar(float height)
+  {
+    int h = (int)height;
+    if (h < 0) { h = 0; }
+    if (h > 15) { h = 15; }
+    return Integer.toString(h, 16).charAt(0);
+  }
+}

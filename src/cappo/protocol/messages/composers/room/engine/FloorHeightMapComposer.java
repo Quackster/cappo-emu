@@ -8,39 +8,38 @@ import cappo.protocol.messages.Composer;
 public class FloorHeightMapComposer
 {
   public static int HEADER;
-  
+
   public static final MessageWriter compose(GameMapBase model)
   {
-    boolean scale = true;
-    
     int len = model.widthX * model.heightY;
-    int packetlen = len + (model.heightY - 1);
-    MessageWriter writer = new MessageWriter(9 + packetlen);
-    Composer.initPacket(HEADER, writer);
-    Composer.writeBoolean(scale, writer);
-    Composer.writeInt16(packetlen, writer);
+    StringBuilder sb = new StringBuilder(len + model.heightY);
     for (int xy = 0; xy < len; xy++)
     {
       if ((xy > 0) && (xy % model.widthX == 0)) {
-        Composer.writeChar('\r', writer);
+        sb.append('\r');
       }
       Square square = model.getSquare(xy);
-      char c;
       if (square == null)
       {
-        c = 'x';
+        sb.append('x');
       }
       else
       {
-        int z = (int)square.height;
-        c = Integer.toString(z, 36).charAt(0);
+        sb.append(heightChar(square.height));
       }
-      Composer.writeChar(c, writer);
     }
+    MessageWriter writer = new MessageWriter();
+    Composer.initPacket(HEADER, writer);
+    Composer.add(sb.toString(), writer);
     Composer.endPacket(writer);
-    
     return writer;
   }
+
+  private static char heightChar(float height)
+  {
+    int h = (int)height;
+    if (h < 0) { h = 0; }
+    if (h > 15) { h = 15; }
+    return Integer.toString(h, 16).charAt(0);
+  }
 }
-
-
