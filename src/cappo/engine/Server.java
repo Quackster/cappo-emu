@@ -137,6 +137,8 @@ public final class Server
       
       ssoSecretKey = props.getProperty("sso.secretkey", "log#in#key");
       mysqlDB = props.getProperty("mysql.db");
+
+      System.out.println("Token SSO for user 1: " + SSOTokenizer.generate(1));
       
       automaticGiveCredits = Integer.valueOf(Integer.parseInt(props.getProperty("game.give.credits", "0")));
       automaticGiveDuckets = Integer.valueOf(Integer.parseInt(props.getProperty("game.give.ducks", "0")));
