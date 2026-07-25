@@ -54,8 +54,8 @@ public class GenerateSecretKeyParser
       return;
     }
     BigInteger clientKey = new BigInteger(key, 16);
-    clientKey = clientKey.modPow(privExp, modulus);
-    clientKey = new BigInteger(new String(pkcs1unpad(clientKey)));
+    //clientKey = clientKey.modPow(privExp, modulus);
+    //clientKey = new BigInteger(new String(pkcs1unpad(clientKey)));
     
     // RC4 disabled: the patched client sends/receives plaintext (its cipher
     // process is stubbed to returnvoid). Keep the pubkey reply so the handshake

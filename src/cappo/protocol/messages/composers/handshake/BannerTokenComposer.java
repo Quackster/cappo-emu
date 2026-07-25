@@ -5,7 +5,7 @@ import cappo.protocol.messages.Composer;
 
 public class BannerTokenComposer
 {
-  public static int HEADER;
+  public static int HEADER = 2226;
   
   public static final MessageWriter compose(String Token)
   {
@@ -18,4 +18,5 @@ public class BannerTokenComposer
   }
 }
 
-
+
+

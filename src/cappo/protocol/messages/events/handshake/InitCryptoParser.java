@@ -50,7 +50,7 @@ public class InitCryptoParser
     Main.InitDH(prime, generator, Main.generateRandomHexString(30));
     
     String encoded = Base64.getEncoder().encodeToString(buf);
-    QueueWriter.write(Main.socket, BannerTokenComposer.compose(encoded));
+    QueueWriter.writeAndFlush(Main.socket, BannerTokenComposer.compose("1e9d1203d2203d3dd9ddcb192ccf0a01"));
   }
 }
 
