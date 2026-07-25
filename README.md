@@ -2,7 +2,7 @@
 
 Olympus Server was written by Capostrike93.
 
-This edit uses RELEASE63-201304291103-855522680, through discovery of the OldOpCodes class, we discovered it can be compatible with this release.
+This edit uses *RELEASE63-201304291103-855522680*, through discovery of the OldOpCodes class I discovered it can be compatible with this release.
 
 Found in file: /src/cappo/protocol/messages/OldOpCodes.java
 
