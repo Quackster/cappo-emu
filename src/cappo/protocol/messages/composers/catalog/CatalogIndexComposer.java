@@ -31,12 +31,12 @@ public class CatalogIndexComposer
         size++;
         
         Composer.add(Boolean.valueOf(page.isVisible), message);
-        
+
+        Composer.add(Integer.valueOf(page.iconColor), message);
         Composer.add(Integer.valueOf(page.IconImage), message);
         Composer.add(Integer.valueOf(page.pageId), message);
         Composer.add(page.pageName, message);
         Composer.add(page.caption, message);
-        Composer.add(Integer.valueOf(0), message);
         if (Catalog.catalogMap.containsKey(Integer.valueOf(page.pageId)))
         {
           Composer.add(message.setSaved(Integer.valueOf(0)), message);
@@ -52,4 +52,4 @@ public class CatalogIndexComposer
   }
 }
 
-
+
