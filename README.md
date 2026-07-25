@@ -1,12 +1,26 @@
+## About 
+
+Olympus Server was written by Capostrike93.
+
+This edit uses RELEASE63-201304291103-855522680, through discovery of the OldOpCodes class, we discovered it can be compatible with this release.
+
+Found in file: /src/cappo/protocol/messages/OldOpCodes.java
+
+#### Changes (by Quackster)
+
+- Moved to Maven
+- Cleared up all JD decompiler comments
+- Fixed all decompilation compile errors
+- Moved all headers to release [RELEASE63-201304291103-855522680](https://h4bbo.net/archive/dcp/swfs/RELEASE63-201304291103-855522680.zip)
+- Reconstructed the database with seeding based off [Orion Emulator](https://github.com/joaowars776/Orion-Emulator) released by joaowars776
+
+## Original Post (by joaowars776)
+
 Olympus Server, Capostrike93 emulator incomplete content with SnowStorm 100% working
 
 There is no such content on the internet anymore, only here
 
 RELEASE63-201307031203-797872414
-
-**Old op codes release** - RELEASE63-201304291103-855522680
-
-Found in file: /src/cappo/protocol/messages/OldOpCodes.java
 
 This was the magnificent emulator that reached tens of thousands of players across many retro crazzy servers (habblet.host.crazzy.org, hapixel, habbolella, habbinfo, habbinc). It also appeared on bobbaitalia for a time in 2013, managed by FahD, one of its creators along with capostrike93.
 
