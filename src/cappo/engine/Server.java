@@ -16,6 +16,7 @@ import cappo.game.navigator.officialrooms.OfficialRooms;
 import cappo.game.player.RightsManager;
 import cappo.game.polls.PollManager;
 import cappo.game.roomengine.RoomManager;
+import cappo.game.roomengine.roomlisting.RoomListing;
 import cappo.game.roomengine.chat.wf.WordFilter;
 import cappo.game.sound.trax.Trax;
 import cappo.protocol.messages.OpCodesManager;
@@ -159,6 +160,7 @@ public final class Server
       NavigatorCategories.Init(result);
       OfficialRooms.init(result);
       RoomManager.Init(result);
+      RoomListing.Init();
       Trax.Init(result);
       BaseItem.Init(result);
       Catalog.Init(result);
