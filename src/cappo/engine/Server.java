@@ -166,9 +166,9 @@
 /* 166:165 */       ItemIdCount = Integer.valueOf(result.data.next() ? result.data.getInt("item_id") : 0);
 /* 167:    */       
 /* 168:167 */       Database.query(result, "SELECT id FROM furnis ORDER BY id DESC LIMIT 1;", new Object[0]);
-/* 169:168 */       ItemIdCount = Integer.valueOf(result.data.next() ? 
-/* 170:169 */         ItemIdCount.intValue() : result.data.getInt("id") > ItemIdCount.intValue() ? result.data.getInt("id") : 
-/* 171:170 */         0);
+/* 169:168 */       ItemIdCount = Integer.valueOf(result.data.next() ?
+/* 170:169 */         (result.data.getInt("id") > ItemIdCount.intValue() ? result.data.getInt("id") : ItemIdCount.intValue()) :
+/* 171:170 */         ItemIdCount.intValue());
 /* 172:    */       
 /* 173:172 */       Database.query(result, "SELECT id FROM `rooms` ORDER BY `id` DESC LIMIT 1;", new Object[0]);
 /* 174:173 */       RoomIdCount = Integer.valueOf(result.data.next() ? result.data.getInt("id") : 0);
@@ -234,8 +234,8 @@
 /* 234:    */   }
 /* 235:    */ }
 
-
-/* Location:           C:\Users\Manel\Downloads\cappo.zip
- * Qualified Name:     cappo.engine.Server
- * JD-Core Version:    0.7.0.1
+
+/* Location:           C:\Users\Manel\Downloads\cappo.zip
+ * Qualified Name:     cappo.engine.Server
+ * JD-Core Version:    0.7.0.1
  */
