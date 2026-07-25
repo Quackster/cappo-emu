@@ -18,12 +18,12 @@ public class PerkAllowancesComposer
     for (PerkAllowance perk : avatarData.perksAllowances)
     {
       Composer.add(perk.codeName, ClientMessage);
-      Composer.add(perk.errorText, ClientMessage);
       Composer.add(Boolean.valueOf(perk.active), ClientMessage);
+      Composer.add(perk.errorText, ClientMessage);
     }
     Composer.endPacket(ClientMessage);
     return ClientMessage;
   }
 }
 
-
+
