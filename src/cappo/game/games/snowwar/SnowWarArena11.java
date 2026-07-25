@@ -631,7 +631,7 @@ public class SnowWarArena11
     Item.Y = 22;
     Item.Rot = 1;
     Item.Z = 0;
-    Item.extraData = new MapStuffData("state=0\toffsetX=-1119\toffsetZ=9950\toffsetY=390\timageUrl=http://dcr.lavvos.pl/lavvos/c_images/DEV_tests/snst_bg_3_noscale.png");
+    Item.extraData = new MapStuffData("state=0\toffsetX=-1119\toffsetZ=9950\toffsetY=390\timageUrl=http://localhost/c_images/DEV_tests/snst_bg_3_noscale.png");
     this.fuseObjects.add(Item);
     
     Item = new GamefuseObject();
@@ -910,4 +910,5 @@ public class SnowWarArena11
   }
 }
 
-
+
+

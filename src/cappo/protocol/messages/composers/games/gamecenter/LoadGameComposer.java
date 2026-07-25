@@ -14,7 +14,7 @@ public class LoadGameComposer
     Composer.initPacket(HEADER, ClientMessage);
     Composer.add(Integer.valueOf(GameId), ClientMessage);
     Composer.add(Long.toString(System.currentTimeMillis()), ClientMessage);
-    Composer.add("http://dcr.lavvos.pl/FastFood.swf", ClientMessage);
+    Composer.add("http://localhost/FastFood.swf", ClientMessage);
     Composer.add("best", ClientMessage);
     Composer.add("showAll", ClientMessage);
     Composer.add(Integer.valueOf(60), ClientMessage);
@@ -40,7 +40,7 @@ public class LoadGameComposer
     
 
     Composer.add("assetUrl", ClientMessage);
-    Composer.add("http://dcr.lavvos.pl/BasicAssets.swf", ClientMessage);
+    Composer.add("http://localhost/BasicAssets.swf", ClientMessage);
     
 
 
@@ -49,4 +49,5 @@ public class LoadGameComposer
   }
 }
 
-
+
+
