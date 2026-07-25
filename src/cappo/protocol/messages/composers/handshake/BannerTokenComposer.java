@@ -11,8 +11,8 @@ public class BannerTokenComposer
   {
     MessageWriter ClientMessage = new MessageWriter();
     Composer.initPacket(HEADER, ClientMessage);
-    Composer.add(Token, ClientMessage);
     Composer.add(Boolean.valueOf(false), ClientMessage);
+    Composer.add(Token, ClientMessage);
     Composer.endPacket(ClientMessage);
     return ClientMessage;
   }
