@@ -54,6 +54,22 @@ public class FactorialServerHandler
     ctx.close();
     channelInactive(ctx);
   }
+
+  public void channelActive(ChannelHandlerContext ctx)
+    throws Exception
+  {
+    Log.printLog("connect " + ctx.channel().remoteAddress());
+    ctx.fireChannelActive();
+  }
+
+  public void channelInactive(ChannelHandlerContext ctx)
+    throws Exception
+  {
+    Channel ch = ctx.channel();
+    Connection cn = (Connection)ch.attr(CONNECTION).get();
+    Log.printLog("disconnect " + ch.remoteAddress() + (cn != null ? "" : " (pre-handshake)"));
+    ctx.fireChannelInactive();
+  }
   
   public void channelRead(ChannelHandlerContext ctx, Object packet)
   {

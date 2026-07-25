@@ -12,11 +12,16 @@ import java.util.List;
 public class HabboPacketDecoder
   extends ByteToMessageDecoder
 {
-  private static final byte[] crossdomain = ""
-  
-
-
-    .getBytes();
+  // Policy string matches the known-good format used by the Ion/Deltar
+  // emulator (server/trunk/HabboHotel/Client/GameClient.cs): the <!DOCTYPE>
+  // declaration and \r\n line breaks follow Adobe's cross-domain-policy spec,
+  // and to-ports="1-31111" covers our game port (30001). Null-terminated.
+  private static final byte[] crossdomain =
+    ("<?xml version=\"1.0\"?>\r\n"
+    + "<!DOCTYPE cross-domain-policy SYSTEM \"/xml/dtds/cross-domain-policy.dtd\">\r\n"
+    + "<cross-domain-policy>\r\n"
+    + "<allow-access-from domain=\"*\" to-ports=\"1-31111\" />\r\n"
+    + "</cross-domain-policy>" + "\0").getBytes();
   
   protected void decode(ChannelHandlerContext ctx, ByteBuf buff, List<Object> out)
     throws Exception
@@ -37,8 +42,7 @@ public class HabboPacketDecoder
       {
         if (packetLen[0] == 60)
         {
-          ch.write(crossdomain);
-          
+          ch.writeAndFlush(crossdomain);
 
           buff.clear();
         }
@@ -90,4 +94,4 @@ public class HabboPacketDecoder
   }
 }
 
-
+

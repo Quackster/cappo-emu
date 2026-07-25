@@ -32,6 +32,7 @@ public class InitCryptoParser
   public void messageReceived(Connection Main)
     throws Exception
   {
+    getPrime();
     String data = prime.toString() + ":" + generator.toString();
     String secret = "!!#!#$#$#%GSdfiaje";
     int Length = "!!#!#$#$#%GSdfiaje".length();

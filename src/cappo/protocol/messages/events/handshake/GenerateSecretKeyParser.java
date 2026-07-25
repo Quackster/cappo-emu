@@ -1,6 +1,5 @@
 package cappo.protocol.messages.events.handshake;
 
-import cappo.engine.network.Crypto;
 import cappo.engine.network.MessageReader;
 import cappo.engine.network.QueueWriter;
 import cappo.engine.player.Connection;
@@ -58,10 +57,13 @@ public class GenerateSecretKeyParser
     clientKey = clientKey.modPow(privExp, modulus);
     clientKey = new BigInteger(new String(pkcs1unpad(clientKey)));
     
-    Main.RC4Decode = new Crypto();
-    Main.RC4Decode.init(Main.HextoBytes(Main.generateSharedKey(clientKey)));
+    // RC4 disabled: the patched client sends/receives plaintext (its cipher
+    // process is stubbed to returnvoid). Keep the pubkey reply so the handshake
+    // completes, but leave Main.RC4Decode null so the decoder is a passthrough.
+    // Main.RC4Decode = new Crypto();
+    // Main.RC4Decode.init(Main.HextoBytes(Main.generateSharedKey(clientKey)));
     QueueWriter.write(Main.socket, ServerPublicKeyComposer.compose(Main.getPublicKey()));
   }
 }
 
-
+
